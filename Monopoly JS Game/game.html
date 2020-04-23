@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Final</title>
+<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	
+<div id="board">
+	<div id="logo"><img src="logo.png"></div>
+	<div id="cards"><img src="chance.jpg" height="75%"><img src="community.jpg" height="75%"></div>
+	<div id="singleplayer"><h2>Single Player Version</h2></div>
+</div>
+
+<div id="messageboard">
+	<p id="bigger"><b>Messages:</b></p>
+	<p id="dice"></p>
+	<p id="message1"></p>
+	<p id="message2"></p>
+	<p id="message3"></p>
+</div>
+<div id="scoreboard">
+	<h1>Earn a 100,000 to Win!</h1>
+	<h2>In this game, you will need to give up 12% of your earnings to roll.</h2>
+	<p><b>Player</b> <img src="https://i.pinimg.com/originals/f3/41/49/f341496e73731b316ea1115d2ba12997.png" width="9%"></p>
+	<p id="score"><b>Score:</b></p>
+	<p id="location"><b>Location:</b></p>
+	<button onclick="myFunction()">Try it</button>
+</div>
+
+<script>
+	var character = {playerName: "character", location: "GO", score: 1500};
+	
+	var spot1 = {spotName: "GO", spottype: "Pay", cost: 200};
+	var spot2 = {spotName: "Mediterranean Avenue", spottype: "Buy", cost: 60};
+	var spot3 = {spotName: "Community Chest", spottype: "Community", cost: 0};
+	var spot4 = {spotName: "Baltic Avenue", spottype: "Buy", cost: 60};
+	var spot5 = {spotName: "Income Tax", spottype: "Pay", cost: 500};
+	var spot6 = {spotName: "Reading Railroad", spottype: "Buy", cost: 200};
+	var spot7 = {spotName: "Oriental Avenue", spottype: "Buy", cost: 100};
+	var spot8 = {spotName: "Chance", spottype: "Chance", cost: 0};
+	var spot9 = {spotName: "Vermont Avenue", spottype: "Buy", cost: 100};
+	var spot10 = {spotName: "Connecticut Avenue", spottype: "Pay", cost: 120};
+	var spot11 = {spotName: "In Jail or Just Visiting", spottype: "Jail", cost: 0};
+	var spot12 = {spotName: "St. Charles Place", spottype: "Buy", cost: 140};
+	var spot13 = {spotName: "Electric Company", spottype: "Buy", cost: 150};
+	var spot14 = {spotName: "States Avenue", spottype: "Buy", cost: 140};
+	var spot15 = {spotName: "Virginia Avenue", spottype: "Buy", cost: 160};
+	var spot16 = {spotName: "Pennsylvania Road", spottype: "Buy", cost: 200};
+	var spot17 = {spotName: "St. James Place", spottype: "Buy", cost: 180};
+	var spot18 = {spotName: "Community Chest", spottype: "Community", cost: 0};
+	var spot19 = {spotName: "Tennessee Avenue", spottype: "Buy", cost: 180};
+	var spot20 = {spotName: "New York Avenue", spottype: "Buy", cost: 200};
+	var spot21 = {spotName: "Free Parking", spottype: "Free", cost: 0};
+	var spot22 = {spotName: "Kentucky Avenue", spottype: "Buy", cost: 220};
+	var spot23 = {spotName: "Chance", spottype: "Chance", cost: 0};
+	var spot24 = {spotName: "Indiana Avenue", spottype: "Buy", cost: 220};
+	var spot25 = {spotName: "Illinois Avenue", spottype: "Buy", cost: 240};
+	var spot26 = {spotName: "B and O Railroad", spottype: "Buy", cost: 200};
+	var spot27 = {spotName: "Atlantic Avenue", spottype: "Buy", cost: 260};
+	var spot28 = {spotName: "Ventnor Avenue", spottype: "Buy", cost: 260};
+	var spot29 = {spotName: "Water Works", spottype: "Free", cost: 150};
+	var spot30 = {spotName: "Marvin Gardens", spottype: "Free", cost: 280};
+	var spot31 = {spotName: "Go To Jail", spottype: "Jail", cost: 0};
+	var spot32 = {spotName: "Pacific Avenue", spottype: "Buy", cost: 300};
+	var spot33 = {spotName: "North Carolina Avenue", spottype: "Buy", cost: 300};
+	var spot34 = {spotName: "Community Chest", spottype: "Community", cost: 0};
+	var spot35 = {spotName: "Pennysylvania Avenue", spottype: "Buy", cost: 320};
+	var spot36 = {spotName: "Short Line", spottype: "Buy", cost: 200};
+	var spot37 = {spotName: "Chance", spottype: "Chance", cost: 0};
+	var spot38 = {spotName: "Park Place", spottype: "Buy", cost: 350};
+	var spot39 = {spotName: "Free Parking", spottype: "Pay", cost: 100};
+	var spot40 = {spotName: "Free Parking", spottype: "Free", cost: 0};
+	
+
+	
+	var spots = [spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9, spot10, spot11, spot12, spot13, spot14, spot15, spot16, spot17, spot18, spot19, spot20, spot21, spot22, spot23, spot24, spot25, spot26, spot27, spot28, spot29, spot30, spot31, spot32, spot33, spot34, spot35, spot36, spot37, spot38, spot39, spot40];
+
+	
+	
+	for (var i = 0; i < spots.length; i++) {
+		var div = document.createElement('div');
+		div.innerHTML = spots[i].spotName;
+		div.style.width = "100px";
+		div.style.height = "100px";
+		div.style.color = "white";
+		div.style.float = "left";
+		div.style.border = "5px solid black";
+		document.getElementById('board').appendChild(div);
+	}
+
+	var dice = 0;
+	var position = 0;
+	var drawnCom = 0;
+	var drawnChance;
+	document.getElementById('dice').style.fontSize = "25px";
+	document.getElementById('message1').style.fontSize = "25px";
+	document.getElementById('message2').style.fontSize = "25px";
+	document.getElementById('message3').style.fontSize = "25px";	
+	
+	document.getElementById('score').style.fontSize = "25px";
+	document.getElementById('location').style.fontSize = "25px";
+	
+	function myFunction() {
+		var btn = document.createElement("BUTTON");
+    	dice = Math.floor(Math.random() * 6) + 1;	
+		position = position + dice;
+		
+		if(position > 40) {
+		   position = position - 40;
+		}
+		
+		
+		document.getElementById('dice').innerHTML = "Rolled a " + dice + "\n";
+		document.getElementById('message1').innerHTML = "At: " + spots[position].spotName + "\n";
+		document.getElementById('message2').innerHTML = "Card Type: " + spots[position].spottype + "\n";
+		
+		if(spots[position].spottype == "Community") {
+		   //draw a card, put the card in the bottom of the deck with a do-while
+			character.score += comdeck[0];
+			document.getElementById('message3').innerHTML = "Money Earned: " + comdeck[0] + "\n";
+			var i = 0;
+			drawnCom = comdeck[0];
+			do {
+				comdeck[i] = comdeck[i+1];
+				i++;
+			}
+			while(i < comdeck.length);
+			comdeck[comdeck.length - 1] = drawnCom;
+		}
+		else if(spots[position].spottype == "Chance") {
+		   //draw a card, put the card in the bottom of the deck with a do-while
+			//check if lose or win
+			if (chancedeck[0].description == "win") {
+				character.score += chancedeck[0].money;
+				document.getElementById('message3').innerHTML = "Money Earned: " + chancedeck[0].money + "\n";
+			}
+			else if (chancedeck[0].description == "lose") {
+				character.score -= chancedeck[0].money;
+				document.getElementById('message3').innerHTML = "Money Lost: " + chancedeck[0].money + "\n";
+			}
+			
+			var i = 0;
+			drawnChance = chancedeck[0];
+			do {
+				chancedeck[i] = chancedeck[i+1];
+				i++;
+			}
+			while(i < chancedeck.length);
+			chancedeck[chancedeck.length - 1] = drawnChance;
+		}
+		if(spots[position].spottype == "Pay") {
+		   //draw a card, put the card in the bottom of the deck with a do-while
+			character.score -= spots[position].cost;
+			document.getElementById('message3').innerHTML = "Money Lost: " + spots[position].cost + "\n";
+		}
+		
+		character.score = character.score * 0.9;
+		document.getElementById('score').innerHTML = character.score;
+		document.getElementById('location').innerHTML = spots[position].spotName;
+		
+	}
+
+	
+	
+	
+</script>	
+
+</body>
+</html>
+

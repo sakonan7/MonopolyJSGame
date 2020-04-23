@@ -1,0 +1,110 @@
+	
+	var com1 = 100;
+	var com2 = 80;
+	var com3 = 400;
+	var com4 = 20;
+	var com5 = 100;
+	var com6 = 80;
+	var com7 = 200;
+	var com8 = 45;
+	var com9 = 40;
+	var com10 = 100;
+	var com11 = 150;
+	var com12 = 80;
+	var com13 = 50;
+	var com14 = 60;
+	var com15 = 90;
+	var com16 = 100;
+	
+	var chance1 = [description: "win", money: 200]; 
+	var chance8 = [description: "lose", money: 200];
+	var chance2 = [description: "lose", money: 250]; 
+	var chance9 = [description: "lose", money: 30];
+	var chance3 = [description: "lose", money: 200]; 
+	var chance10 = [description: "win", money: 0];
+	var chance4 = [description: "win", money: 50]; 
+	var chance11 = [description: "win", money: 20];
+	var chance5 = [description: "win", money: 20]; 
+	var chance12 = [description: "lose", money: 500];
+	var chance6 = [description: "lose", money: 500]; 
+	var chance13 = [description: "win", money: 50];
+	var chance7 = [description: "win", money: 25]; 
+	var chance14 = [description: "win", money: 5];
+	var chance15 = [description: "win", money: 300]; 
+	var chance16 = [description: "lose", money: 200]; 
+	
+		
+	var comdeck = [com1, com2, com3, com4, com5, com6, com7, com8, com9, com10, com11, com12, com13, com14, com15, com16];
+	var chancedeck = [chance1, chance2, chance3, chance4, chance5, chance6, chance7, chance8, chance9, chance10, chance11, chance12, chance13, chance14, chance15, chance16];
+do {
+		dice = Math.floor(Math.random() * 6) + 1;
+		document.getElementById('message1').innerHTML = "Rolled a " + dice + "\n";
+		
+		//an if statement to check which side you're on
+		
+		currentPos += dice;
+		if (currentPos == 11) {
+		   if (row == "first") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow1[dice].spotName;
+			}
+			else if (row == "second") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow2[dice].spotName;
+			}
+			else if (row == "third") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow3[dice].spotName;
+			}
+			else if (row == "fourth") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow4[dice].spotName;
+			}
+		}
+		else if (currentPos >= 11){
+			//switch arrays
+			currentPos = currentPos - 11;
+			if (row == "first") {
+				row = "second";
+			}
+			else if (row == "second") {
+				row = "third";
+			}
+			else if (row == "third") {
+				row = "fourth";
+			}
+			else if (row == "fourth") {
+				row = "first";
+			}
+			else {
+				
+				if (row == "first") {
+					document.getElementById('message2').innerHTML = "Player is now on " + spotRow1[currentPos].spotName;
+				}
+				else if (row == "second") {
+					document.getElementById('message2').innerHTML = "Player is now on " + spotRow2[currentPos].spotName;
+				}
+				else if (row == "third") {
+			   		document.getElementById('message2').innerHTML = "Player is now on " + spotRow3[currentPos].spotName;
+				}
+				else if (row == "fourth") {
+			   		document.getElementById('message2').innerHTML = "Player is now on " + spotRow4[currentPos].spotName;
+				}
+			}
+			
+		}
+		else {
+			if (row == "first") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow1[dice].spotName;
+			}
+			else if (row == "second") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow2[dice].spotName;
+			}
+			else if (row == "third") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow3[dice].spotName;
+			}
+			else if (row == "fourth") {
+			   document.getElementById('message2').innerHTML = "Player is now on " + spotRow4[dice].spotName;
+			}
+		}
+		//changes to scoreboard
+		
+	}
+	while(character.score < 100000);
+-->

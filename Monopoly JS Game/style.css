@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+#board {
+	min-height: 900px;
+	min-width: 1100px;
+	height: auto;
+	width: auto;
+	background-color: darkseagreen;
+	float: left;
+}
+#messageboard {
+	min-height: 550px;
+	min-width: 670px;
+	height: auto;
+	width: auto;
+	float: left;
+	background-color: lightgray;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+#scoreboard {
+	min-height: 550px;
+	min-width: 700px;
+	height: auto;
+	width: auto;
+	background-color: white;
+	float: left;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+#logo {
+	display: block;
+	  margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+	height: 150px;
+	padding: 10px;
+}
+
+#singleplayer {
+	display: block;
+	margin: auto;
+	width: 50%;
+	height: 50px;
+}
+
+#cards {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	width: 25%;
+	height: 150px;
+	padding: 5px;
+}
+
+#bigger {
+	font-size: 30px;
+}
+
+#score {
+	font-size: 20px;
+}
+
+
