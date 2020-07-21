@@ -1,0 +1,8 @@
+@charset "utf-8";
+#board {
+	height: 750px; /*700*/
+	width: 1125px; /*1050*/
+
+	background-color: darkseagreen;
+	float: left;
+}
