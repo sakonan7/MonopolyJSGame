@@ -10,7 +10,14 @@
         <div id="space" style="float: left;">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 3px; font-size: 11px"><b>FREE PARKING</b></p>
             <div id="image"><img src="freeparking.png" style="height: 57px;"></div>
-        </div>        
+        </div>  
+        <!--spaces towards the right will not have left borders-->
+        <div id="space" style="float: left; border-left-width: 0px;">
+            <div id="rectangle"></div>
+        </div>              
+        <!--Spaces going down will not have a top border-->
+        <div id="space" style="float: bottom; border-top-width: 0px;">
+        </div> 
     </div>
 </body>    
 </html>

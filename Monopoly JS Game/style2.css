@@ -18,3 +18,15 @@
 	margin-left: 17px;
 	margin-bottom: 10px;
 }
+
+#rectangle {
+	border-bottom-width: 4px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-style: solid;
+	border-color: black;
+	background-color: red;
+	width: 87.5px;
+	height: 20px;
+}
