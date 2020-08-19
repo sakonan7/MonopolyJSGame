@@ -18,8 +18,10 @@
 /*May just need to adjust the image position in the image itself*/
 /*Maybe image should be height: 40px*/
 #image {
-	margin-left: 17px;
-	margin-bottom: 10px;
+	margin-left: 7px;
+	/*border-style: solid;*/
+	width: 72.5px;
+	height: 52px;
 }
 
 #rectangle {
