@@ -1,7 +1,7 @@
 @charset "utf-8";
 #board {
-	height: 700px; /*750*/
-	width: 1050px; /*1125*/
+	height: 710px; /*750*/
+	width: 1304.5px; /*1125*/
 
 	background-color: darkseagreen;
 	float: left;
