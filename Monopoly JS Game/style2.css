@@ -6,6 +6,12 @@
 	background-color: darkseagreen;
 	float: left;
 }
+#gameUI {
+	height: 640px;
+	width: 1185px;
+	border-style: solid;
+	border-color: red;
+}
 #space {
 	width: 87.5px;
 	height: 87.5px;
