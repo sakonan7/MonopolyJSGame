@@ -7,10 +7,11 @@
 	float: left;
 }
 #gameUI {
-	height: 640px;
-	width: 1185px;
+	height: 587px; 
+	width: 1098px; 
 	border-style: solid;
 	border-color: red;
+	border-width: 4px;
 }
 #space {
 	width: 87.5px;
