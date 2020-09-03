@@ -1,17 +1,14 @@
 @charset "utf-8";
 #board {
-	height: 740px; /*750*/
+	height: 737px; /*750*/
 	width: 1285px; /*1125*/
 
 	background-color: darkseagreen;
 	float: left;
 }
 #gameUI {
-	height: 587px; 
-	width: 1098px; 
-	border-style: solid;
-	border-color: red;
-	border-width: 4px;
+	height: 541px; 
+	width: 1090px;
 }
 #space {
 	width: 87.5px;
