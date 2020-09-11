@@ -33,6 +33,13 @@
 	width: 72.5px;
 	height: 23px;	
 }
+#bluechance {
+	margin-left: 7px;
+	/*border-style: solid;*/
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
 
 #rectangle {
 	border-bottom-width: 4px;
@@ -48,14 +55,14 @@
 
 #chancecards {
 	height: 130px;
-	width: 208px;
+	width: 201px;
 	border-style: solid; 
 	border-width: 4px; 
 	border-color: white
 }
 #communitycards {
 	height: 130px;
-	width: 207px;
+	width: 200px;
 	border-style: solid; 
 	border-width: 4px; 
 	border-color: white
