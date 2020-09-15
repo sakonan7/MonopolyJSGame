@@ -23,7 +23,7 @@
             <p style="margin-top: 6px; margin-bottom: 8px; margin-left: 2px; font-size: 8.5px; width: 82.5px; text-align: center"><b>CHANCE</b></p>
             <div id="bluechance">
                 <img src="bluechance.png" style="height: 52px; transform: translate(23.5px); position: relative;">
-                <img src="car.png" style="height: 17px; transform: translate(-24px, 40px); position: absolute">
+                <!--<img src="car.png" style="height: 17px; transform: translate(-24px, 40px); position: absolute">-->
             </div>
         </div>  
         <div id="space" style="float: left; border-left-width: 0px;">
@@ -176,7 +176,10 @@
         </div>           
         <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 90px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
-            <div id="image"><img src="go.png" style="height: 48px; transform: translate(-4px, 2px)"></div>
+            <div id="image">
+                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative">
+                <img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">
+            </div>
         </div>
         <div id="gameUI" style="transform: translate(95px, -1224px);">
             <!--Add 10px?-->
@@ -185,10 +188,12 @@
             <div id="chancecards" style="transform: translate(304px, -10px);"><img src="chancecards.png" style="height: 140px;"></div>
             <div id="communitycards" style="transform: translate(564px, -158px);"><img src="communitycards.png" style="height: 140px;"></div>
             <!--Javascript will provide text-->
+            <!--Roll button will be on a separate line with a transform translate-->
+            <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
             <pre id="playerboard" style="font-size: 16px; transform: translate(325px, -159px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif"><b>Player     Score:     $12000     Space:             GO              </b><button onclick="myFunction()">Roll</button>
             </pre>
             <!--Dice only appear when you roll-->
-            <div id="dice" style="transform: translate(474px, -167px)"><img src="one.png" style="height: 60px"><img src="one.png" style="height: 60px; transform: translate(25px)"></div>
+            <div id="dice" style="transform: translate(477px, -167px)"><img src="one.png" style="height: 60px"><img src="one.png" style="height: 60px; transform: translate(19px)"></div>
         </div>                                            
     </div>
     <script>
@@ -196,6 +201,12 @@
         var chance = false;
         var roll1 = 1;
         var space = 0;
+        //if and else statements to determine where the piece is placed and what is written in playerboard
+        //separate set of if and else statements for community and chance cards
+        function myFunction() {
+		    var btn = document.createElement("BUTTON");
+            //random in JavaScript
+        }
     </script>
 </body>    
 </html>
