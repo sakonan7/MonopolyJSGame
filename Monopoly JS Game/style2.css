@@ -17,29 +17,6 @@
 	border-color: black;
 	border-width: 4px;
 }
-/*May need a id for each space image*/
-/*Image may be where I put the player piece*/
-/*May just need to adjust the image position in the image itself*/
-/*Maybe image should be height: 40px*/
-#image {
-	margin-left: 7px;
-	/*border-style: solid;*/
-	width: 72.5px;
-	height: 52px;
-	position: relative;
-}
-#kentucky {
-	margin-left: 7px;
-	width: 72.5px;
-	height: 23px;	
-}
-#bluechance {
-	margin-left: 7px;
-	/*border-style: solid;*/
-	width: 72.5px;
-	height: 52px;
-	position: relative;
-}
 
 #rectangle {
 	border-bottom-width: 4px;
@@ -73,4 +50,92 @@
 	height: 60px;
 	/*20px distance between dice?*/
 	width: 150px;
+}
+
+/*May need a id for each space image*/
+/*Image may be where I put the player piece*/
+/*May just need to adjust the image position in the image itself*/
+/*Maybe image should be height: 40px*/
+#image {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#kentucky {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 23px;
+}
+#bluechance {
+	margin-left: 7px;
+	/*border-style: solid;*/
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#indiana {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#illinois {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#borailroad {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#atlantic {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#ventnor {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#water {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#marvin {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#jail {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#pacific {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#carolina {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 23px;
+}
+#communitytop {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
 }
