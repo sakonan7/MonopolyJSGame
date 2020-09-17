@@ -139,3 +139,60 @@
 	height: 52px;
 	position: relative;
 }
+#newyork {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 23px;	
+}
+#tennessee {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 23px;	
+}
+#communityleft {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#stjames {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#pennsylvaniar {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;
+}
+#viriginia {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#states {
+	margin-left: 7px;
+	margin-top: 12px;
+	width: 72.5px;
+	height: 23px;	
+}
+#electric {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;	
+}
+#stcharles {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 23px;
+}
+#jailed {
+	margin-left: 7px;
+	width: 72.5px;
+	height: 52px;
+	position: relative;	
+}
