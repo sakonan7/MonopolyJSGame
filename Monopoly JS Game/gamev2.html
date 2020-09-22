@@ -247,11 +247,11 @@
             <div id="boardwalk">
             </div>
         </div>           
-        <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 90px">
+        <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 89.5px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
             <div id="go">
                 <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative">
-                <img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">
+                <!--<img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">-->
             </div>
         </div>
         <div id="gameUI" style="transform: translate(95px, -1224px);">
@@ -263,10 +263,10 @@
             <!--Javascript will provide text-->
             <!--Roll button will be on a separate line with a transform translate-->
             <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
-            <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -173px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b>Player     Score:     $12000     Space:                    GO                </b>
+            <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -173px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
             </pre>
             <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -221px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
-            <div style="font-size: 16px; transform: translate(354px, -211px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to win. Earn $100,000 to win.</b>
+            <div style="font-size: 16px; transform: translate(354px, -211px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
             </div>
             <!--Dice only appear when you roll-->
             <div id="dice" style="transform: translate(477px, -201px)"><img src="one.png" style="height: 60px"><img src="one.png" style="height: 60px; transform: translate(19px)"></div>
@@ -278,6 +278,9 @@
         var roll1 = 1;
         var space = 0;
         var jailed = false;
+        var score = 12000;
+        //How to make bold
+        document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:                    GO                ";
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
         function myFunction() {
@@ -288,6 +291,12 @@
             if (space == 0) {
                 community = false;
                 chance = false;
+                score += 12000;
+                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
+                //Player     Score:     $12000     Space:                    GO                
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:                    GO                ";
+                //document.getElementById('dice').style.fontSize = "25px";
+                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
             }
             //for jailed, place piece lower down
         }
