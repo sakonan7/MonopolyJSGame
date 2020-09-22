@@ -284,7 +284,11 @@
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
         function myFunction() {
-		    var btn = document.createElement("BUTTON");
+            var btn = document.createElement("BUTTON");
+            space += roll1;
+            if (space >= 39) {
+                space -= 39;
+            }
             //random in JavaScript
 
             //every space that is not a community or chance space makes community and chance false
@@ -294,11 +298,42 @@
                 score += 12000;
                 //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
                 //Player     Score:     $12000     Space:                    GO                
+                document.getElementById('playerboard').style.fontStyle = 'bold';
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:                    GO                ";
                 //document.getElementById('dice').style.fontSize = "25px";
                 document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
             }
+            if (space == 1) {
+                community = false;
+                chance = false;
+                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
+                //Player     Score:     $12000     Space:                    GO                
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:         Mediterranean Avenue         ";
+                //document.getElementById('dice').style.fontSize = "25px";
+                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+            }
+            if (space == 2) {
+                community = true;
+                chance = false;
+                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
+                //Player     Score:     $12000     Space:                    GO                
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:            Community Chest           ";
+                //document.getElementById('dice').style.fontSize = "25px";
+                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+            }   
+            if (space == 3) {
+                community = false;
+                chance = false;
+                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
+                //Player     Score:     $12000     Space:                    GO                
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:             Baltic Avenue            ";
+                //document.getElementById('dice').style.fontSize = "25px";
+                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+            }                                
             //for jailed, place piece lower down
+
+            //if (community == true)
+            //change community chest card to current card
         }
     </script>
 </body>    
