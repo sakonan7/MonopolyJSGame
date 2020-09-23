@@ -265,7 +265,7 @@
             <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
             <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -173px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
             </pre>
-            <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -221px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
+            <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -217px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
             <div style="font-size: 16px; transform: translate(354px, -211px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
             </div>
             <!--Dice only appear when you roll-->
@@ -279,8 +279,8 @@
         var space = 0;
         var jailed = false;
         var score = 12000;
-        //How to make bold
-        document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:                    GO                ";
+        document.getElementById('playerboard').style.fontWeight = 'bold';
+        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
         function myFunction() {
@@ -289,6 +289,7 @@
             if (space >= 39) {
                 space -= 39;
             }
+            score -= score * 0.1;
             //random in JavaScript
 
             //every space that is not a community or chance space makes community and chance false
@@ -298,8 +299,7 @@
                 score += 12000;
                 //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
                 //Player     Score:     $12000     Space:                    GO                
-                document.getElementById('playerboard').style.fontStyle = 'bold';
-                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:                    GO                ";
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
                 //document.getElementById('dice').style.fontSize = "25px";
                 document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
             }
@@ -308,7 +308,7 @@
                 chance = false;
                 //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
                 //Player     Score:     $12000     Space:                    GO                
-                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:         Mediterranean Avenue         ";
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:     Mediterranean Avenue       ";
                 //document.getElementById('dice').style.fontSize = "25px";
                 document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
             }
@@ -317,7 +317,7 @@
                 chance = false;
                 //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
                 //Player     Score:     $12000     Space:                    GO                
-                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:            Community Chest           ";
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 //document.getElementById('dice').style.fontSize = "25px";
                 document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
             }   
@@ -326,10 +326,11 @@
                 chance = false;
                 //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
                 //Player     Score:     $12000     Space:                    GO                
-                document.getElementById('playerboard').innerHTML = "Player     Score:     " + score + "     Space:             Baltic Avenue            ";
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Baltic Avenue            ";
                 //document.getElementById('dice').style.fontSize = "25px";
                 document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
-            }                                
+            }                              
+
             //for jailed, place piece lower down
 
             //if (community == true)
