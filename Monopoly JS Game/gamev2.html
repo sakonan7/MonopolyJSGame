@@ -283,6 +283,13 @@
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
+        var car = document.createElement("IMG");
+        car.setAttribute("src", "car.png");
+        car.setAttribute("height", "17px");
+        car.setAttribute("transform", "translate(0px, -41px)");
+        car.setAttribute("position", "absolute");
+        document.getElementById('go').appendChild(car);        
+
         function myFunction() {
             var btn = document.createElement("BUTTON");
             space += roll1;
@@ -297,65 +304,58 @@
                 community = false;
                 chance = false;
                 score += 12000;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('go').appendChild(car);
             }
             if (space == 1) {
                 community = false;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:     Mediterranean Avenue       ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('mediterranean').appendChild(car);
             }
             if (space == 2) {
                 community = true;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('communitybottom').appendChild(car);
             }   
             if (space == 3) {
                 community = false;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Baltic Avenue            ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('baltic').appendChild(car);
             } 
             if (space == 4) {
                 community = false;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Income Tax            ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('income').appendChild(car);
             }
             if (space == 5) {
                 community = false;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('reading').appendChild(car);
             }
             if (space == 6) {
                 community = false;
                 chance = false;
-                //document.getElementById('playerboard').innerHTML = "Rolled a " + dice + "\n";
-                //Player     Score:     $12000     Space:                    GO                
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:           Oriental Avenue            ";
-                //document.getElementById('dice').style.fontSize = "25px";
-                document.getElementById('go').append('car.png').style.height = "17px", transform = "translate(0px, -21px)", position = "absolute";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('oriental').appendChild(car);
             }                                                                 
 
             //for jailed, place piece lower down
