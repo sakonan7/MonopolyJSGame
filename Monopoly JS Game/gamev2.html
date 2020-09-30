@@ -262,7 +262,7 @@
             <img src="logo.png" style="height: 160px; transform: translate(340px, 27px)">
             <p style="font-size: 28px; transform: translate(404px, -3px); -webkit-text-stroke: 3px black; color: white; font-family: Arial, Helvetica, sans-serif"><b>Single Player Version</b></p>
             <div id="chancecards" style="transform: translate(304px, -24px);"><img src="chancecards.png" style="height: 140px;"></div>
-            <div id="communitycards" style="transform: translate(564px, -172px);"><img src="communitycards.png" style="height: 140px;"></div>
+            <div id="communitycards" style="transform: translate(564px, -172px);"></div>
             <!--Javascript will provide text-->
             <!--Roll button will be on a separate line with a transform translate-->
             <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
@@ -291,7 +291,12 @@
         car.setAttribute("height", "17px");
         car.setAttribute("transform", "translate(0px, -41px)");
         car.setAttribute("position", "absolute");
-        document.getElementById('go').appendChild(car);        
+        document.getElementById('go').appendChild(car);   
+
+        var community = document.createElement("IMG");
+        community.setAttribute("src", "communitycards.png");
+        community.setAttribute("height", "140px");
+        document.getElementById('communitycards').appendChild(community);
 
         function myFunction() {
             var btn = document.createElement("BUTTON");
@@ -365,7 +370,9 @@
             //for jailed, place piece lower down
 
             //if (community == true)
-            //if (community == false)
+            if (community == false) {
+                document.getElementById('communitycards').appendChild(community);
+            }
             //change community chest card to current card
         }
     </script>
