@@ -253,7 +253,7 @@
         <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 89.5px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
             <div id="go">
-                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative">
+                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: absolute; z-index: 1">
                 <!--<img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">-->
             </div>
         </div>
@@ -286,11 +286,16 @@
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
+
+        //Managed to move car by modifying go.png, but, car is behind
         var car = document.createElement("IMG");
         car.setAttribute("src", "car.png");
         car.setAttribute("height", "17px");
         car.setAttribute("transform", "translate(0px, -41px)");
         car.setAttribute("position", "absolute");
+        car.setAttribute("z-index", "2");
+        car.setAttribute("top", "20px");
+        car.setAttribute("right", "20px");
         document.getElementById('go').appendChild(car);   
 
         var community = document.createElement("IMG");
@@ -374,7 +379,40 @@
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
                 document.getElementById('oriental').appendChild(car);
-            }                                                                 
+            }
+            if (space == 7) {
+                community = false;
+                chance = true;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('redchance').appendChild(car);
+            }
+            if (space == 8) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Vermont Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('vermont').appendChild(car);
+            }
+            if (space == 9) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Connecticut Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('connecticut').appendChild(car);
+            }
+            if (space == 10) {
+                community = false;
+                chance = false;
+                //message changes depending on how you got to jail
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('jailed').appendChild(car);
+            }                                                                                                                 
 
             //for jailed, place piece lower down
 
@@ -390,7 +428,7 @@
             else if (community == true) {
                 //randomizer
                 if (cardRandom == 0) {
-                    document.getElementById('communitycards').appendChild(community1);
+                    //document.getElementById('communitycards').appendChild(community1);
                     score += 450;
                 }
             }
