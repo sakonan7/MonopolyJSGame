@@ -298,6 +298,15 @@
         community.setAttribute("height", "140px");
         document.getElementById('communitycards').appendChild(community);
 
+        var cardRandom = 0;
+
+        var communityCard1 = {used: false};
+        var communityCards = [communityCard1];
+
+        var community1 = document.createElement("IMG");
+        community1.setAttribute("src", "community1.jpg");
+        community1.setAttribute("height", "140px");        
+
         function myFunction() {
             var btn = document.createElement("BUTTON");
             space += roll1;
@@ -369,9 +378,21 @@
 
             //for jailed, place piece lower down
 
-            //if (community == true)
+            //community and chance cards
+                //do loop for as long as the randomizer keeps getting a used card
+                    //when that happens, use notUsed boolean to select and use the card
+                    //reset notUsed
+                //do loop for if all the cards are used
+                //how to change used boolean
             if (community == false) {
                 document.getElementById('communitycards').appendChild(community);
+            }
+            else if (community == true) {
+                //randomizer
+                if (cardRandom == 0) {
+                    document.getElementById('communitycards').appendChild(community1);
+                    score += 450;
+                }
             }
             //change community chest card to current card
         }
