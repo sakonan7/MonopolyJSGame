@@ -412,7 +412,47 @@
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
                 document.getElementById('jailed').appendChild(car);
-            }                                                                                                                 
+            }    
+            if (space == 11) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. Charles Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('stcharles').appendChild(car);
+            }
+            if (space == 12) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Electric Company            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('electric').appendChild(car);
+            }  
+            if (space == 13) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            States Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('states').appendChild(car);
+            }
+            if (space == 14) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Virginia Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('virginia').appendChild(car);
+            }
+            if (space == 15) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:      Pennsylvania Railroad            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('pennsylvaniar').appendChild(car);
+            }                                                                                                                                                                     
 
             //for jailed, place piece lower down
 
@@ -430,6 +470,7 @@
                 if (cardRandom == 0) {
                     //document.getElementById('communitycards').appendChild(community1);
                     score += 450;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }
             }
             //change community chest card to current card
