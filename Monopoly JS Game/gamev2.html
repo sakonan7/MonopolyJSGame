@@ -311,11 +311,15 @@
         var cardRandom = 1;
 
         var communityCard1 = {used: false};
-        var communityCards = [communityCard1];
+        var communityCard2 = {used: false};
+        var communityCards = [communityCard1, communityCard2];
 
         var community1 = document.createElement("IMG");
         community1.setAttribute("src", "community1.jpg");
         community1.setAttribute("height", "140px");
+        var community2 = document.createElement("IMG");
+        community2.setAttribute("src", "community2.jpg");
+        community2.setAttribute("height", "140px");        
 
         var chanceCard1 = {used: false};
         var chanceCard2 = {used: false};
@@ -488,6 +492,11 @@
                     score += 450;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }
+                if (cardRandom == 1) {
+                    document.getElementById('communitycards').appendChild(community2);
+                    score += 2000;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                }                
             }
             if (chance == false) {
                 document.getElementById('chancecards').appendChild(chance);
