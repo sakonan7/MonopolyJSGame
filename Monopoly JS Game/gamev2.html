@@ -308,7 +308,7 @@
         chanceCard.setAttribute("height", "140px");
         document.getElementById('chancecards').appendChild(chanceCard);        
 
-        var cardRandom = 1;
+        var cardRandom = 0;
 
         var communityCard1 = {used: false};
         var communityCard2 = {used: false};
@@ -472,7 +472,47 @@
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
                 document.getElementById('pennsylvaniar').appendChild(car);
-            }                                                                                                                                                                     
+            }
+            if (space == 16) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. James' Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('stjames').appendChild(car);
+            }
+            if (space == 17) {
+                community = true;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('communityleft').appendChild(car);
+            }
+            if (space == 18) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Tennessee Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('tennessee').appendChild(car);
+            }
+            if (space == 19) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          New York Avenue            ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('newyork').appendChild(car);
+            }
+            if (space == 20) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:           Free Parking                ";
+                car.setAttribute("transform", "translate(0px, -41px)");
+                car.setAttribute("position", "absolute");
+                document.getElementById('free').appendChild(car);
+            }                                                                                                                                                                                                                                 
 
             //for jailed, place piece lower down
 
@@ -482,6 +522,10 @@
                     //reset notUsed
                 //do loop for if all the cards are used
                 //how to change used boolean
+                //do loop for searching whole array, as long as array[i].used == true && i < array.length
+                    //as long as one card is not used, the loop will end, and the whole deck doesn't have to be searched
+                    //if whole array is used, allused == true and all cards are reset, if i == array.length - 1 because deck is being searched from first to last in order
+                //then a do loop to keep searching for a random as long as array[random] == true
             if (community == false) {
                 document.getElementById('communitycards').appendChild(communityCard);
             }
