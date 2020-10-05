@@ -35,7 +35,7 @@
 /*Image may be where I put the player piece*/
 /*May just need to adjust the image position in the image itself*/
 /*Maybe image should be height: 40px*/
-#image {
+#free {
 	margin-left: 7px;
 	width: 72.5px;
 	height: 52px;

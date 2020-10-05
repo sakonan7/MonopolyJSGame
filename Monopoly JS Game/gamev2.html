@@ -9,7 +9,7 @@
     <div id="board">
         <div id="space" style="float: left;">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 5px; font-size: 11px; width: 83.5px; text-align: center"><b>FREE PARKING</b></p>
-            <div id="image"><img src="freeparking.png" style="height: 56px; transform: translate(9.5px)"></div>
+            <div id="free"><img src="freeparking.png" style="height: 56px; transform: translate(9.5px)"></div>
         </div>  
         <!--spaces towards the right will not have left borders-->
         <div id="space" style="float: left; border-left-width: 0px;">
@@ -298,15 +298,15 @@
         car.setAttribute("right", "20px");
         document.getElementById('go').appendChild(car);   
 
-        var community = document.createElement("IMG");
-        community.setAttribute("src", "communitycards.png");
-        community.setAttribute("height", "140px");
-        document.getElementById('communitycards').appendChild(community);
+        var communityCard = document.createElement("IMG");
+        communityCard.setAttribute("src", "communitycards.png");
+        communityCard.setAttribute("height", "140px");
+        document.getElementById('communitycards').appendChild(communityCard);
 
-        var chance = document.createElement("IMG");
-        chance.setAttribute("src", "chancecards.png");
-        chance.setAttribute("height", "140px");
-        document.getElementById('chancecards').appendChild(chance);        
+        var chanceCard = document.createElement("IMG");
+        chanceCard.setAttribute("src", "chancecards.png");
+        chanceCard.setAttribute("height", "140px");
+        document.getElementById('chancecards').appendChild(chanceCard);        
 
         var cardRandom = 1;
 
@@ -483,7 +483,7 @@
                 //do loop for if all the cards are used
                 //how to change used boolean
             if (community == false) {
-                document.getElementById('communitycards').appendChild(community);
+                document.getElementById('communitycards').appendChild(communityCard);
             }
             else if (community == true) {
                 //randomizer
@@ -499,7 +499,7 @@
                 }                
             }
             if (chance == false) {
-                document.getElementById('chancecards').appendChild(chance);
+                document.getElementById('chancecards').appendChild(chanceCard);
             }
             else if (chance == true) {
                 //randomizer
