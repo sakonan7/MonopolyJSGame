@@ -353,14 +353,26 @@
 
         var communityCard1 = {used: false};
         var communityCard2 = {used: false};
-        var communityCards = [communityCard1, communityCard2];
+        var communityCard3 = {used: false};
+        var communityCard4 = {used: false};
+        var communityCard5 = {used: false};
+        var communityCards = [communityCard1, communityCard2, communityCard3, communityCard4, communityCard5];
 
         var community1 = document.createElement("IMG");
         community1.setAttribute("src", "community1.jpg");
         community1.setAttribute("height", "140px");
         var community2 = document.createElement("IMG");
         community2.setAttribute("src", "community2.jpg");
-        community2.setAttribute("height", "140px");        
+        community2.setAttribute("height", "140px");
+        var community3 = document.createElement("IMG");
+        community3.setAttribute("src", "community3.jpg");
+        community3.setAttribute("height", "140px");
+        var community4 = document.createElement("IMG");
+        community4.setAttribute("src", "community4.jpg");
+        community4.setAttribute("height", "140px");
+        var community5 = document.createElement("IMG");
+        community5.setAttribute("src", "community5.jpg");
+        community5.setAttribute("height", "140px");                                
 
         var chanceCard1 = {used: false};
         var chanceCard2 = {used: false};
@@ -375,6 +387,7 @@
 
         function myFunction() {
             var btn = document.createElement("BUTTON");
+            jailed = false;
 
             //remove dice
             if (firstRoll == false) {
@@ -670,7 +683,7 @@
             else if (community == true) {
                 //randomizer
                 if (cardRandom == 0) {
-                    //document.getElementById('communitycards').appendChild(community1);
+                    document.getElementById('communitycards').appendChild(community1);
                     score += 450;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }
@@ -678,7 +691,26 @@
                     document.getElementById('communitycards').appendChild(community2);
                     score += 2000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                }                
+                }
+                if (cardRandom == 2) {
+                    document.getElementById('communitycards').appendChild(community3);
+                    score += 100;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                }
+                if (cardRandom == 3) {
+                    document.getElementById('communitycards').appendChild(community4);
+                    space = 10
+                    score -= 500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
+                    car.setAttribute("transform", "translate(0px, -41px)");
+                    car.setAttribute("position", "absolute");
+                    document.getElementById('jailed').appendChild(car);                    
+               }
+               if (cardRandom == 4) {
+                    document.getElementById('communitycards').appendChild(community5);
+                    score += 1000;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                }                                                               
             }
             if (chance == false) {
                 document.getElementById('chancecards').appendChild(chanceCard);
