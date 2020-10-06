@@ -272,14 +272,17 @@
             <div style="font-size: 16px; transform: translate(354px, -211px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
             </div>
             <!--Dice only appear when you roll-->
-            <div id="dice" style="transform: translate(477px, -201px)"><img src="one.png" style="height: 60px"><img src="one.png" style="height: 60px; transform: translate(19px)"></div>
+            <!--try using margin to separate dice-->
+            <div id="dice" style="transform: translate(477px, -201px)"></div>
         </div>                                            
     </div>
     <script>
         var community = false;
         var chance = false;
         var roll1 = 1;
+        var roll2 = 1;
         var space = 0;
+        var firstRoll = true;
         var jailed = false;
         var score = 12000;
         document.getElementById('playerboard').style.fontWeight = 'bold';
@@ -297,6 +300,44 @@
         car.setAttribute("top", "20px");
         car.setAttribute("right", "20px");
         document.getElementById('go').appendChild(car);   
+
+        var dice1 = document.createElement("IMG");
+        dice1.setAttribute("src", "one.png");
+        dice1.setAttribute("height", "60px");
+        var dice2 = document.createElement("IMG");
+        dice2.setAttribute("src", "two.png");
+        dice2.setAttribute("height", "60px");
+        var dice3 = document.createElement("IMG");
+        dice3.setAttribute("src", "three.png");
+        dice3.setAttribute("height", "60px");
+        var dice4 = document.createElement("IMG");
+        dice4.setAttribute("src", "four.png");
+        dice4.setAttribute("height", "60px");
+        var dice5 = document.createElement("IMG");
+        dice5.setAttribute("src", "five.png");
+        dice5.setAttribute("height", "60px");
+        var dice6 = document.createElement("IMG");
+        dice6.setAttribute("src", "six.png");
+        dice6.setAttribute("height", "60px");  
+
+        var bdice1 = document.createElement("IMG");
+        bdice1.setAttribute("src", "one.png");
+        bdice1.setAttribute("height", "60px");
+        var bdice2 = document.createElement("IMG");
+        bdice2.setAttribute("src", "two.png");
+        bdice2.setAttribute("height", "60px");
+        var bdice3 = document.createElement("IMG");
+        bdice3.setAttribute("src", "three.png");
+        bdice3.setAttribute("height", "60px");
+        var bdice4 = document.createElement("IMG");
+        bdice4.setAttribute("src", "four.png");
+        bdice4.setAttribute("height", "60px");
+        var bdice5 = document.createElement("IMG");
+        bdice5.setAttribute("src", "five.png");
+        bdice5.setAttribute("height", "60px");
+        var bdice6 = document.createElement("IMG");
+        bdice6.setAttribute("src", "six.png");
+        bdice6.setAttribute("height", "60px");                                       
 
         var communityCard = document.createElement("IMG");
         communityCard.setAttribute("src", "communitycards.png");
@@ -334,11 +375,56 @@
 
         function myFunction() {
             var btn = document.createElement("BUTTON");
-            space += roll1;
+
+            //remove dice
+            if (firstRoll == false) {
+                if (roll1 == 1) {
+                    dice1.parentNode.removeChild(dice1);
+                }
+                else if (roll1 == 2) {
+                    dice2.parentNode.removeChild(dice2);
+                }
+                else if (roll1 == 3) {
+                    dice3.parentNode.removeChild(dice3);
+                }
+                else if (roll1 == 4) {
+                    dice4.parentNode.removeChild(dice4);
+                }
+                else if (roll1 == 5) {
+                    dice5.parentNode.removeChild(dice5);
+                }
+                else if (roll1 == 6) {
+                    dice6.parentNode.removeChild(dice6);
+                }                                                                                
+                if (roll2 == 1) {
+                    bdice1.parentNode.removeChild(bdice1);
+                }
+                else if (roll2 == 2) {
+                    bdice2.parentNode.removeChild(bdice2);
+                }
+                else if (roll2 == 3) {
+                    bdice3.parentNode.removeChild(bdice3);
+                }
+                else if (roll2 == 4) {
+                    bdice4.parentNode.removeChild(bdice4);
+                }
+                else if (roll2 == 5) {
+                    bdice5.parentNode.removeChild(bdice5);
+                }
+                else if (roll2 == 6) {
+                    bdice6.parentNode.removeChild(bdice6);
+                }                                                                                
+            }
+
+            roll1 = Math.floor(Math.random() * 6) + 1;
+            roll2 = Math.floor(Math.random() * 6) + 1;
+            space += roll1 + roll2;
+            //space += 1;
             if (space >= 39) {
                 space -= 39;
             }
             score -= score * 0.1;
+
             //random in JavaScript
 
             //every space that is not a community or chance space makes community and chance false
@@ -428,6 +514,7 @@
                 community = false;
                 chance = false;
                 //message changes depending on how you got to jail
+                //placement of car changes
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
@@ -512,9 +599,58 @@
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
                 document.getElementById('free').appendChild(car);
-            }                                                                                                                                                                                                                                 
+            }
 
-            //for jailed, place piece lower down
+            //dice   
+            firstRoll = false;                                                                                                                                                                                                                              
+            if (roll1 == 1){
+                document.getElementById('dice').appendChild(dice1);
+            }
+            else if (roll1 == 2){
+                document.getElementById('dice').appendChild(dice2);
+            }
+            else if (roll1 == 3){
+                document.getElementById('dice').appendChild(dice3);
+            } 
+            else if (roll1 == 4){
+                document.getElementById('dice').appendChild(dice4);
+            }
+            else if (roll1 == 5){
+                document.getElementById('dice').appendChild(dice5);
+            }
+            else if (roll1 == 6){
+                document.getElementById('dice').appendChild(dice6);
+            }                                                           
+            if (roll2 == 1){
+                bdice1.setAttribute("float", "left");
+                bdice1.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice1);
+            }
+            else if (roll2 == 2){
+                bdice2.setAttribute("float", "left");
+                bdice2.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice2);
+            }   
+            else if (roll2 == 3){
+                bdice3.setAttribute("float", "left");
+                bdice3.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice3);
+            }
+            else if (roll2 == 4){
+                bdice4.setAttribute("float", "left");
+                bdice4.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice4);
+            }  
+            else if (roll2 == 5){
+                bdice5.setAttribute("float", "left");
+                bdice5.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice5);
+            }
+            else if (roll2 == 6){
+                bdice6.setAttribute("float", "left");
+                bdice6.setAttribute("border-left", "19px");
+                document.getElementById('dice').appendChild(bdice6);
+            }                                                                   
 
             //community and chance cards
                 //do loop for as long as the randomizer keeps getting a used card
@@ -526,13 +662,15 @@
                     //as long as one card is not used, the loop will end, and the whole deck doesn't have to be searched
                     //if whole array is used, allused == true and all cards are reset, if i == array.length - 1 because deck is being searched from first to last in order
                 //then a do loop to keep searching for a random as long as array[random] == true
+
+            //remove card in communitycards/chancecards
             if (community == false) {
                 document.getElementById('communitycards').appendChild(communityCard);
             }
             else if (community == true) {
                 //randomizer
                 if (cardRandom == 0) {
-                    document.getElementById('communitycards').appendChild(community1);
+                    //document.getElementById('communitycards').appendChild(community1);
                     score += 450;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }
