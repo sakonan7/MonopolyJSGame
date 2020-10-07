@@ -745,7 +745,21 @@
             }
             //can't have chance and community around at the same time
             if (chance == false) {
-                               
+                if (cardRandom == 0) {
+                    chance1.parentNode.removeChild(chance1);
+                }
+                if (cardRandom == 1) {
+                    chance2.parentNode.removeChild(chance2);
+                }
+                if (cardRandom == 2) {
+                    chance3.parentNode.removeChild(chance3);
+                }
+                if (cardRandom == 3) {
+                    chance4.parentNode.removeChild(chance4);
+                }
+                if (cardRandom == 4) {
+                    chance5.parentNode.removeChild(chance5);
+                }                               
                 document.getElementById('chancecards').appendChild(chanceCard);
             }
             else if (chance == true) {
