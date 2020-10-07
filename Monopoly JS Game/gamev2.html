@@ -283,7 +283,7 @@
         var roll2 = 1;
         var space = 0;
         var firstRoll = true;
-        var jailed = false;
+        var jailfree = false;
         var score = 12000;
         document.getElementById('playerboard').style.fontWeight = 'bold';
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
@@ -379,18 +379,29 @@
 
         var chanceCard1 = {used: false};
         var chanceCard2 = {used: false};
-        var chanceCards = [chanceCard1, chanceCard2];
+        var chanceCard3 = {used: false};
+        var chanceCard4 = {used: false};
+        var chanceCard5 = {used: false};
+        var chanceCards = [chanceCard1, chanceCard2, chanceCard3, chanceCard4, chanceCard5];
 
         var chance1 = document.createElement("IMG");
         chance1.setAttribute("src", "chance1.jpg");
         chance1.setAttribute("height", "140px");
         var chance2 = document.createElement("IMG");
         chance2.setAttribute("src", "chance2.jpg");
-        chance2.setAttribute("height", "140px");                                
+        chance2.setAttribute("height", "140px");
+        var chance3 = document.createElement("IMG");
+        chance3.setAttribute("src", "chance3.png");
+        chance3.setAttribute("height", "140px");
+        var chance4 = document.createElement("IMG");
+        chance4.setAttribute("src", "chance4.png");
+        chance4.setAttribute("height", "140px");
+        var chance5 = document.createElement("IMG");
+        chance5.setAttribute("src", "chance5.png");
+        chance5.setAttribute("height", "140px");                                                        
 
         function myFunction() {
-            var btn = document.createElement("BUTTON");
-            jailed = false;            
+            var btn = document.createElement("BUTTON");          
 
             //remove dice
             if (firstRoll == false) {
@@ -435,7 +446,7 @@
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             //space += roll1 + roll2;
-            space += 1;
+            space += 7;
             if (space >= 39) {
                 space -= 39;
             }
@@ -683,13 +694,25 @@
             if (community == false) {
                 if (cardRandom == 0) {
                     community1.parentNode.removeChild(community1);
-                }               
+                }
+                if (cardRandom == 1) {
+                    community2.parentNode.removeChild(community2);
+                }
+                if (cardRandom == 2) {
+                    community3.parentNode.removeChild(community3);
+                }
+                if (cardRandom == 3) {
+                    community4.parentNode.removeChild(community4);
+                }
+                if (cardRandom == 4) {
+                    community5.parentNode.removeChild(community5);
+                }                                                                               
                 document.getElementById('communitycards').appendChild(communityCard);
             }
             else if (community == true) {
                 communityCard.parentNode.removeChild(communityCard);
                 //randomizer
-                cardRandom = Math.floor(Math.random() * communityCards.length - 1);
+                cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
                 if (cardRandom == 0) {
                     document.getElementById('communitycards').appendChild(community1);
                     score += 450;
@@ -705,7 +728,7 @@
                     score += 100;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }
-                if (cardRandom == 3) {
+                if (cardRandom == 3 && jailfree == false) {
                     document.getElementById('communitycards').appendChild(community4);
                     space = 10
                     score -= 500;
@@ -720,11 +743,15 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 }                                                               
             }
-            if (chance == false) {               
+            //can't have chance and community around at the same time
+            if (chance == false) {
+                               
                 document.getElementById('chancecards').appendChild(chanceCard);
             }
             else if (chance == true) {
+                chanceCard.parentNode.removeChild(chanceCard);
                 //randomizer
+                cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
                 if (cardRandom == 0) {
                     document.getElementById('chancecards').appendChild(chance1);
                     score -= 150;
@@ -739,7 +766,28 @@
                     car.setAttribute("transform", "translate(0px, -41px)");
                     car.setAttribute("position", "absolute");
                     document.getElementById('income').appendChild(car);                    
-                }                
+                }
+                if (cardRandom == 2 && jailfree == false) {
+                    document.getElementById('chancecards').appendChild(chance3);
+                    space = 10
+                    score -= 500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
+                    car.setAttribute("transform", "translate(0px, -41px)");
+                    car.setAttribute("position", "absolute");
+                    document.getElementById('jailed').appendChild(car);                    
+                }
+                if (cardRandom == 3) {
+                    document.getElementById('chancecards').appendChild(chance4);
+                    jailfree = true;
+                }
+                if (cardRandom == 4) {
+                    document.getElementById('chancecards').appendChild(chance5);
+                    space = 39
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Boardwalk            ";
+                    car.setAttribute("transform", "translate(0px, -41px)");
+                    car.setAttribute("position", "absolute");
+                    document.getElementById('boardwalk').appendChild(car);                     
+                }                                                             
             }            
         }
     </script>
