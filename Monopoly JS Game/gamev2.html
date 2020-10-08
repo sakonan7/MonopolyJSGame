@@ -253,7 +253,7 @@
         <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 89.5px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
             <div id="go">
-                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: absolute; z-index: 1">
+                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative; z-index: 1"> <!--absolute; z-index: 1-->
                 <!--<img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">-->
             </div>
         </div>
@@ -279,6 +279,8 @@
     <script>
         var community = false;
         var chance = false;
+        var nowCommunity = false;
+        var nowChance = false;
         var roll1 = 1;
         var roll2 = 1;
         var space = 0;
@@ -297,8 +299,8 @@
         car.setAttribute("transform", "translate(0px, -41px)");
         car.setAttribute("position", "absolute");
         car.setAttribute("z-index", "2");
-        car.setAttribute("top", "20px");
-        car.setAttribute("right", "20px");
+        //car.setAttribute("top", "20px");
+        //car.setAttribute("right", "20px");
         document.getElementById('go').appendChild(car);   
 
         var dice1 = document.createElement("IMG");
@@ -442,11 +444,49 @@
                     bdice6.parentNode.removeChild(bdice6);
                 }                                                                                
             }
+            if (nowCommunity == true) {
+                nowCommunity = false;
+                community = false;
+                if (cardRandom == 0) {
+                    community1.parentNode.removeChild(community1);
+                }
+                if (cardRandom == 1) {
+                    community2.parentNode.removeChild(community2);
+                }
+                if (cardRandom == 2) {
+                    community3.parentNode.removeChild(community3);
+                }
+                if (cardRandom == 3) {
+                    community4.parentNode.removeChild(community4);
+                }
+                if (cardRandom == 4) {
+                    community5.parentNode.removeChild(community5);
+                }                
+            }
+            if (nowChance == true) {
+                nowChance = false;
+                chance = false;
+                if (cardRandom == 0) {
+                    chance1.parentNode.removeChild(chance1);
+                }
+                if (cardRandom == 1) {
+                    chance2.parentNode.removeChild(chance2);
+                }
+                if (cardRandom == 2) {
+                    chance3.parentNode.removeChild(chance3);
+                }
+                if (cardRandom == 3) {
+                    chance4.parentNode.removeChild(chance4);
+                }
+                if (cardRandom == 4) {
+                    chance5.parentNode.removeChild(chance5);
+                }                
+            }
 
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             //space += roll1 + roll2;
-            space += 7;
+            space += 1;
             if (space >= 39) {
                 space -= 39;
             }
@@ -475,6 +515,7 @@
             if (space == 2) {
                 community = true;
                 chance = false;
+                nowCommunity = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
@@ -516,6 +557,7 @@
             if (space == 7) {
                 community = false;
                 chance = true;
+                nowChance = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
@@ -598,6 +640,7 @@
             if (space == 17) {
                 community = true;
                 chance = false;
+                nowCommunity = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
                 car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
@@ -691,22 +734,7 @@
                 //then a do loop to keep searching for a random as long as array[random] == true
 
             //remove card in communitycards/chancecards
-            if (community == false) {
-                if (cardRandom == 0) {
-                    community1.parentNode.removeChild(community1);
-                }
-                if (cardRandom == 1) {
-                    community2.parentNode.removeChild(community2);
-                }
-                if (cardRandom == 2) {
-                    community3.parentNode.removeChild(community3);
-                }
-                if (cardRandom == 3) {
-                    community4.parentNode.removeChild(community4);
-                }
-                if (cardRandom == 4) {
-                    community5.parentNode.removeChild(community5);
-                }                                                                               
+            if (community == false) {                                                                               
                 document.getElementById('communitycards').appendChild(communityCard);
             }
             else if (community == true) {
@@ -744,22 +772,7 @@
                 }                                                               
             }
             //can't have chance and community around at the same time
-            if (chance == false) {
-                if (cardRandom == 0) {
-                    chance1.parentNode.removeChild(chance1);
-                }
-                if (cardRandom == 1) {
-                    chance2.parentNode.removeChild(chance2);
-                }
-                if (cardRandom == 2) {
-                    chance3.parentNode.removeChild(chance3);
-                }
-                if (cardRandom == 3) {
-                    chance4.parentNode.removeChild(chance4);
-                }
-                if (cardRandom == 4) {
-                    chance5.parentNode.removeChild(chance5);
-                }                               
+            if (chance == false) {                               
                 document.getElementById('chancecards').appendChild(chanceCard);
             }
             else if (chance == true) {
