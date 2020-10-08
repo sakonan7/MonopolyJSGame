@@ -283,6 +283,10 @@
 	border-width: 4px; 
 	border-color: white
 }
+#jailFree {
+	height: 140px;
+	width: 197px;
+}
 
 #dice {
 	/*make 28?*/
