@@ -286,7 +286,7 @@
         var roll2 = 1;
         var space = 0;
         var firstRoll = true;
-        var jailfree = false;
+        var jailFree = false;
         var score = 12000;
         document.getElementById('playerboard').style.fontWeight = 'bold';
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
@@ -789,7 +789,6 @@
                 //randomizer
                 //reshuffler, don't reshuffle (used = false) jail free is jail free = true
                 //cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
-                cardRandom = 3;
                 if (cardRandom == 0) {
                     document.getElementById('chancecards').appendChild(chance1);
                     score -= 150;
@@ -827,7 +826,7 @@
                 }
                 if (cardRandom == 3) {
                     document.getElementById('chancecards').appendChild(chance4);
-                    jailfree = true;
+                    jailFree = true;
                 }
                 if (cardRandom == 4) {
                     document.getElementById('chancecards').appendChild(chance5);
