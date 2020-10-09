@@ -482,7 +482,7 @@
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             //space += roll1 + roll2;
-            space += 10;
+            space += 1;
             if (space >= 39) {
                 space -= 39;
             }
@@ -589,48 +589,48 @@
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. Charles Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('stcharles').appendChild(car);
             }
             if (space == 12) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Electric Company            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('electric').appendChild(car);
             }  
             if (space == 13) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            States Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('states').appendChild(car);
             }
             if (space == 14) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Virginia Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('virginia').appendChild(car);
             }
             if (space == 15) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:      Pennsylvania Railroad            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('pennsylvaniar').appendChild(car);
             }
             if (space == 16) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. James' Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('stjames').appendChild(car);
             }
             if (space == 17) {
@@ -638,32 +638,32 @@
                 chance = false;
                 nowCommunity = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('communityleft').appendChild(car);
             }
             if (space == 18) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Tennessee Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('tennessee').appendChild(car);
             }
             if (space == 19) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          New York Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('newyork').appendChild(car);
             }
             if (space == 20) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:           Free Parking                ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('free').appendChild(car);
             }
 
