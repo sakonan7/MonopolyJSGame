@@ -253,7 +253,7 @@
         <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 89.5px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
             <div id="go">
-                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative; z-index: 1"> <!--absolute; z-index: 1-->
+                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative;"> <!--absolute; z-index: 1-->
                 <!--<img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">-->
             </div>
         </div>
@@ -297,11 +297,9 @@
         var car = document.createElement("IMG");
         car.setAttribute("src", "car.png");
         car.setAttribute("height", "17px");
-        car.setAttribute("transform", "translate(0px, -41px)");
         car.setAttribute("position", "absolute");
-        car.setAttribute("z-index", "2");
-        //car.setAttribute("top", "20px");
-        //car.setAttribute("right", "20px");
+        //car.setAttribute("z-index", "2");
+        car.style.WebkitTransform = "translate(0px, -19px)";
         document.getElementById('go').appendChild(car);   
 
         var dice1 = document.createElement("IMG");
@@ -484,7 +482,7 @@
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             //space += roll1 + roll2;
-            space += 1;
+            space += 10;
             if (space >= 39) {
                 space -= 39;
             }
@@ -498,16 +496,16 @@
                 chance = false;
                 score += 12000;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('go').appendChild(car);
             }
             if (space == 1) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:     Mediterranean Avenue       ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('mediterranean').appendChild(car);
             }
             if (space == 2) {
@@ -515,16 +513,16 @@
                 chance = false;
                 nowCommunity = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('communitybottom').appendChild(car);
             }   
             if (space == 3) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Baltic Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('baltic').appendChild(car);
             } 
             if (space == 4) {
@@ -532,24 +530,24 @@
                 chance = false;
                 score -= 2000;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Income Tax            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(-16px, 27px)";
                 document.getElementById('income').appendChild(car);
             }
             if (space == 5) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
                 document.getElementById('reading').appendChild(car);
             }
             if (space == 6) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:           Oriental Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('oriental').appendChild(car);
             }
             if (space == 7) {
@@ -557,24 +555,24 @@
                 chance = true;
                 nowChance = true;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(-28px, 7px)";
                 document.getElementById('redchance').appendChild(car);
             }
             if (space == 8) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Vermont Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('vermont').appendChild(car);
             }
             if (space == 9) {
                 community = false;
                 chance = false;
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Connecticut Avenue            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
                 document.getElementById('connecticut').appendChild(car);
             }
             if (space == 10) {
@@ -583,8 +581,8 @@
                 //message changes depending on how you got to jail
                 //placement of car changes
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
-                car.setAttribute("transform", "translate(0px, -41px)");
                 car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -62px)"; //-22
                 document.getElementById('jailed').appendChild(car);
             }    
             if (space == 11) {
@@ -760,8 +758,8 @@
                     if (jailFree == false) {
                         score -= 500;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
-                        car.setAttribute("transform", "translate(0px, -41px)");
                         car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, 22px)";
                         document.getElementById('jailed').appendChild(car);                        
                     }
                     else if (jailFree == true) {
@@ -769,8 +767,8 @@
                         chance4.parentNode.removeChild(chance4);
                         //To indicate that you are not jailed
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
-                        car.setAttribute("transform", "translate(0px, -41px)");
                         car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -62px)";
                         document.getElementById('jailed').appendChild(car);                        
                     }                    
                }
@@ -810,8 +808,8 @@
                     if (jailFree == false) {
                         score -= 500;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
-                        car.setAttribute("transform", "translate(0px, -41px)");
                         car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, 22px)";
                         document.getElementById('jailed').appendChild(car);                        
                     }
                     else if (jailFree == true) {
@@ -819,8 +817,8 @@
                         chance4.parentNode.removeChild(chance4);
                         //To indicate that you are not jailed
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
-                        car.setAttribute("transform", "translate(0px, -41px)");
                         car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -62px)";
                         document.getElementById('jailed').appendChild(car);                        
                     }
                 }
