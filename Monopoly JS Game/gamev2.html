@@ -284,7 +284,7 @@
         var nowChance = false;
         var roll1 = 1;
         var roll2 = 1;
-        var space = 24;
+        var space = 26;
         var firstRoll = true;
         var jailFree = false;
         var score = 12000;
@@ -740,24 +740,67 @@
                 document.getElementById('marvin').appendChild(car);
             }
             if (space == 30) {
-                space = 10
-                if (jailFree == false) {
-                    score -= 500;
-                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
-                    car.setAttribute("position", "absolute");
-                    car.style.WebkitTransform = "translate(0px, -12px)";
-                    document.getElementById('jailed').appendChild(car);                        
-                }
-                else if (jailFree == true) {
-                    jailFree = false;
-                    chance4.parentNode.removeChild(chance4);
-                    //To indicate that you are not jailed
-                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
-                    car.setAttribute("position", "absolute");
-                    car.style.WebkitTransform = "translate(0px, -62px)";
-                    document.getElementById('jailed').appendChild(car);                        
-                }
-            }                                                                                                          
+                //copy and paste from the community card
+
+            }            
+            if (space == 31) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Pacific Gardens            ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
+                document.getElementById('pacific').appendChild(car);
+            }
+            if (space == 32) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:     North Carolina Avenue            ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
+                document.getElementById('carolina').appendChild(car);
+            }
+            if (space == 33) {
+                community = true;
+                chance = false;
+                nowCommunity = true;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -19px)";
+                document.getElementById('communitytop').appendChild(car);
+            }
+            if (space == 34) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:       Pennsylvania Avenue            ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -51px)";
+                document.getElementById('pennsylvaniaa').appendChild(car);
+            }
+            if (space == 35) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Short Line                ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, -15px)";
+                document.getElementById('short').appendChild(car);
+            }
+            if (space == 36) {
+                community = false;
+                chance = true;
+                nowChance = true;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(-28px, 7px)";
+                document.getElementById('orangechance').appendChild(car);
+            } 
+            if (space == 37) {
+                community = false;
+                chance = false;
+                document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:           Park Avenue            ";
+                car.setAttribute("position", "absolute");
+                car.style.WebkitTransform = "translate(0px, 15px)";
+                document.getElementById('park').appendChild(car);
+            }                                               
 
             //dice   
             firstRoll = false;                                                                                                                                                                                                                              
