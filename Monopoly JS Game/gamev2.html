@@ -396,7 +396,19 @@
         chance4.setAttribute("height", "140px");
         var chance5 = document.createElement("IMG");
         chance5.setAttribute("src", "chance5.png");
-        chance5.setAttribute("height", "140px");                                                        
+        chance5.setAttribute("height", "140px");
+        var chance6 = document.createElement("IMG");
+        chance6.setAttribute("src", "chance6.jpg");
+        chance6.setAttribute("height", "140px");
+        var chance7 = document.createElement("IMG");
+        chance7.setAttribute("src", "chance7.jpg");
+        chance7.setAttribute("height", "140px");
+        var chance8 = document.createElement("IMG");
+        chance8.setAttribute("src", "chance8.jpg");
+        chance8.setAttribute("height", "140px");
+        var chance9 = document.createElement("IMG");
+        chance9.setAttribute("src", "chance9.jpg");
+        chance9.setAttribute("height", "140px");                                                                                        
 
         function myFunction() {
             var btn = document.createElement("BUTTON");          
@@ -981,7 +993,54 @@
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
                     document.getElementById('boardwalk').appendChild(car);                     
-                }                                                             
+                }
+                if (cardRandom == 5) {
+                    document.getElementById('chancecards').appendChild(chance6);
+                    space = 39
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Illinois Avenue            ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, 15px)";
+                    document.getElementById('illinois').appendChild(car);                     
+                }
+                if (cardNumber == 6) {
+                    document.getElementById('chancecards').appendChild(chance7);
+                    if (space == 36) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Water Works                ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -15px)";
+                        document.getElementById('water').appendChild(car);
+                    }
+                    if (space == 22) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Water Works                ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -15px)";
+                        document.getElementById('water').appendChild(car);
+                    }
+                    if (space == 7) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Electric Company            ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -19px)";
+                        document.getElementById('electric').appendChild(car);
+                    }
+                }
+                if (cardNumber == 7) {
+                    document.getElementById('chancecards').appendChild(chance8);
+                    if (space == 36 || space == 22) {
+                        score += 12000;
+                    }
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. Charles Avenue            ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, 15px)";
+                    document.getElementById('stcharles').appendChild(car);                    
+                }
+                if (cardNumber == 8) {
+                    document.getElementById('chancecards').appendChild(chance8);
+                    score += 12000;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, -19px)";
+                    document.getElementById('go').appendChild(car);                    
+                }                                                                             
             }            
         }
     </script>
