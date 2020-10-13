@@ -978,8 +978,8 @@
                     document.getElementById('chancecards').appendChild(chance5);
                     space = 39
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Boardwalk            ";
-                    car.setAttribute("transform", "translate(0px, -41px)");
                     car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, 15px)";
                     document.getElementById('boardwalk').appendChild(car);                     
                 }                                                             
             }            
