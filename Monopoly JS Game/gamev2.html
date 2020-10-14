@@ -1101,7 +1101,42 @@
                         car.style.WebkitTransform = "translate(0px, -19px)";
                         document.getElementById('reading').appendChild(car);
                     }
-                }                                                                             
+                    if (space == 22) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          B. & O. Railroad                ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -15px)";
+                        document.getElementById('borailroad').appendChild(car);
+                    }
+                    if (space == 36) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Short Line                ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -15px)";
+                        document.getElementById('short').appendChild(car);
+                    }
+                }
+                if (cardNumber == 10) {
+                    document.getElementById('chancecards').appendChild(chance11);
+                    score += 500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                }
+                if (cardNumber == 11) {
+                    document.getElementById('chancecards').appendChild(chance12);
+                    score += 12000;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, -19px)";
+                    document.getElementById('reading').appendChild(car);
+                } 
+                if (cardNumber == 12) {
+                    document.getElementById('chancecards').appendChild(chance13);
+                    score += 500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                }
+                if (cardNumber == 13) {
+                    document.getElementById('chancecards').appendChild(chance14);
+                    score += 1500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                }                                                                                                           
             }            
         }
     </script>
