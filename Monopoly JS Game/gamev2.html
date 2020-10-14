@@ -418,7 +418,22 @@
         chance8.setAttribute("height", "140px");
         var chance9 = document.createElement("IMG");
         chance9.setAttribute("src", "chance9.jpg");
-        chance9.setAttribute("height", "140px");                                                                                        
+        chance9.setAttribute("height", "140px");
+        var chance10 = document.createElement("IMG");
+        chance10.setAttribute("src", "chance10.jpg");
+        chance10.setAttribute("height", "140px");
+        var chance11 = document.createElement("IMG");
+        chance11.setAttribute("src", "chance11.jpg");
+        chance11.setAttribute("height", "140px");
+        var chance12 = document.createElement("IMG");
+        chance12.setAttribute("src", "chance12.jpg");
+        chance12.setAttribute("height", "140px");
+        var chance13 = document.createElement("IMG");
+        chance13.setAttribute("src", "chance13.jpg");
+        chance13.setAttribute("height", "140px");
+        var chance14 = document.createElement("IMG");
+        chance14.setAttribute("src", "chance14.jpg");
+        chance14.setAttribute("height", "140px");                                                                                                                                
 
         function myFunction() {
             var btn = document.createElement("BUTTON");          
@@ -498,7 +513,34 @@
                 }
                 if (cardRandom == 4) {
                     chance5.parentNode.removeChild(chance5);
-                }                
+                }
+                if (cardRandom == 5) {
+                    chance6.parentNode.removeChild(chance6);
+                }
+                if (cardRandom == 6) {
+                    chance7.parentNode.removeChild(chance7);
+                }
+                if (cardRandom == 7) {
+                    chance8.parentNode.removeChild(chance8);
+                }
+                if (cardRandom == 8) {
+                    chance9.parentNode.removeChild(chance9);
+                }
+                if (cardRandom == 9) {
+                    chance10.parentNode.removeChild(chance10);
+                }
+                if (cardRandom == 10) {
+                    chance11.parentNode.removeChild(chance11);
+                }
+                if (cardRandom == 11) {
+                    chance12.parentNode.removeChild(chance12);
+                } 
+                if (cardRandom == 12) {
+                    chance13.parentNode.removeChild(chance13);
+                }
+                if (cardRandom == 13) {
+                    chance14.parentNode.removeChild(chance14);
+                }                                                                                                                                                               
             }
 
             roll1 = Math.floor(Math.random() * 6) + 1;
@@ -1044,12 +1086,21 @@
                     document.getElementById('stcharles').appendChild(car);                    
                 }
                 if (cardNumber == 8) {
-                    document.getElementById('chancecards').appendChild(chance8);
+                    document.getElementById('chancecards').appendChild(chance9);
                     score += 12000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -19px)";
                     document.getElementById('go').appendChild(car);                    
+                }
+                if (cardNumber == 9) {
+                    document.getElementById('chancecards').appendChild(chance10);
+                    if (space == 7) {
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -19px)";
+                        document.getElementById('reading').appendChild(car);
+                    }
                 }                                                                             
             }            
         }
