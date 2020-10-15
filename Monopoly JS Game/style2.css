@@ -283,9 +283,16 @@
 	border-width: 4px; 
 	border-color: white
 }
-#jailFree {
+#jailFreeChance {
 	height: 140px;
 	width: 197px;
+}
+#jailFreeCom {
+	height: 140px;
+	width: 197px;
+	border-style: solid; 
+	border-width: 4px; 
+	border-color: white
 }
 
 #dice {
