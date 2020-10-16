@@ -264,18 +264,18 @@
             <div id="jailFreeChance" style="transform: translate(77px, -19px);"></div>
             <div id="chancecards" style="transform: translate(304px, -164px);"></div>
             <div id="communitycards" style="transform: translate(564px, -312px);"></div>
-            <div id="jailFreeCom" style="transform: translate(791px, -460px);"></div>
+            <div id="jailFreeCom" style="transform: translate(809px, -454px);"></div>
             <!--Javascript will provide text-->
             <!--Roll button will be on a separate line with a transform translate-->
             <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
-            <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -313px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
+            <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -453px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
             </pre>
-            <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -357px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
-            <div style="font-size: 16px; transform: translate(354px, -351px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
+            <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -497px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
+            <div style="font-size: 16px; transform: translate(354px, -491px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
             </div>
             <!--Dice only appear when you roll-->
             <!--try using margin to separate dice-->
-            <div id="dice" style="transform: translate(477px, -341px)"></div>
+            <div id="dice" style="transform: translate(477px, -481px)"></div>
         </div>                                            
     </div>
     <script>
@@ -285,7 +285,7 @@
         var nowChance = false;
         var roll1 = 1;
         var roll2 = 1;
-        var space = 26;
+        var space = 0;
         var firstRoll = true;
         var jailFreeChance = false;
         var jailFreeCom = false;
@@ -548,7 +548,7 @@
                     community8.parentNode.removeChild(community8);
                 } 
                 if (cardRandom == 8) {
-                    community9.parentNode.removeChild(community9);
+                    document.getElementById('jailFreeCom').appendChild(community9);
                 }
                 if (cardRandom == 9) {
                     community10.parentNode.removeChild(community10);
@@ -879,8 +879,33 @@
                 document.getElementById('marvin').appendChild(car);
             }
             if (space == 30) {
-                //copy and paste from the community card
-
+                space = 10
+                if (jailFreeChance == false && jailFreeCom == false) {
+                    score -= 500;
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, -12px)";
+                    document.getElementById('jailed').appendChild(car);                        
+                }
+                else if (jailFreeChance == true || jailFreeCom == true) {
+                    if (jailFreeChance == true && jailFreeCom == true) {
+                        jailFreeChance = false;
+                        chance4.parentNode.removeChild(chance4);
+                    }
+                    else if (jailFreeChance == true && jailFreeCom == false) {
+                        jailFreeChance = false;
+                        chance4.parentNode.removeChild(chance4);
+                    }
+                    else if (jailFreeChance == false && jailFreeCom == true) {
+                        jailFreeCom = false;
+                        community9.parentNode.removeChild(community9);
+                    }
+                    //To indicate that you are not jailed
+                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
+                    car.setAttribute("position", "absolute");
+                    car.style.WebkitTransform = "translate(0px, -62px)";
+                    document.getElementById('jailed').appendChild(car);                        
+                }
             }            
             if (space == 31) {
                 community = false;
@@ -1072,6 +1097,10 @@
                     document.getElementById('communitycards').appendChild(community5);
                     score += 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                }
+                if (cardRandom == 8) {
+                    document.getElementById('communitycards').appendChild(community9);
+                    jailFreeCom = true;
                 }                                                               
             }
             //can't have chance and community around at the same time
