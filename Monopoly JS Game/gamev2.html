@@ -1071,19 +1071,19 @@
                     document.getElementById('communitycards').appendChild(community1);
                     score += 450;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard1 = true;
+                    communityCard1.used = true;
                 }
                 if (cardRandom == 1) {
                     document.getElementById('communitycards').appendChild(community2);
                     score += 2000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard2 = true;
+                    communityCard2.used = true;
                 }
                 if (cardRandom == 2) {
                     document.getElementById('communitycards').appendChild(community3);
                     score += 100;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard3 = true;
+                    communityCard3.used = true;
                 }
                 if (cardRandom == 3) {
                     document.getElementById('communitycards').appendChild(community4);
@@ -1115,72 +1115,72 @@
                         car.style.WebkitTransform = "translate(0px, -62px)";
                         document.getElementById('jailed').appendChild(car);                        
                     } 
-                    communityCard4 = true;                   
+                    communityCard4.used = true;                   
                 }
                 if (cardRandom == 4) {
                     document.getElementById('communitycards').appendChild(community5);
                     score += 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard5 = true;
+                    communityCard5.used = true;
                 }
                 if (cardRandom == 5) {
                     document.getElementById('communitycards').appendChild(community6);
                     score -= 1500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard6 = true;
+                    communityCard6.used = true;
                 }
                 if (cardRandom == 6) {
                     document.getElementById('communitycards').appendChild(community7);
                     score -= 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard7 = true;
+                    communityCard7.used = true;
                 }
                 if (cardRandom == 7) {
                     document.getElementById('communitycards').appendChild(community8);
                     score -= 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard8 = true;
+                    communityCard8.used = true;
                 }                                                
                 if (cardRandom == 8) {
                     document.getElementById('communitycards').appendChild(community9);
                     jailFreeCom = true;
-                    communityCard9 = true;
+                    communityCard9.used = true;
                 }
                 if (cardRandom == 9) {
                     document.getElementById('communitycards').appendChild(community10);
                     score += 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard10 = true;
+                    communityCard10.used = true;
                 }
                 if (cardRandom == 10) {
                     document.getElementById('communitycards').appendChild(community11);
                     score += 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard11 = true;
+                    communityCard11.used = true;
                 }
                 if (cardRandom == 11) {
                     document.getElementById('communitycards').appendChild(community12);
                     score += 200;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard12 = true;
+                    communityCard12.used = true;
                 }
                 if (cardRandom == 12) {
                     document.getElementById('communitycards').appendChild(community13);
                     score += 250;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard13 = true;
+                    communityCard13.used = true;
                 }
                 if (cardRandom == 13) {
                     document.getElementById('communitycards').appendChild(community14);
                     score += 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard14 = true;
+                    communityCard14.used = true;
                 }
                 if (cardRandom == 14) {
                     document.getElementById('communitycards').appendChild(community15);
                     score += 1000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
-                    communityCard15 = true;
+                    communityCard15.used = true;
                 }                                                                                                                                                               
             }
             //can't have chance and community around at the same time
@@ -1213,6 +1213,7 @@
                     document.getElementById('chancecards').appendChild(chance1);
                     score -= 150;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                    chanceCard1.used = true;
                 }
                 if (cardRandom == 1) {
                     document.getElementById('chancecards').appendChild(chance2);
@@ -1222,7 +1223,8 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Income Tax            ";
                     car.setAttribute("transform", "translate(0px, -41px)");
                     car.setAttribute("position", "absolute");
-                    document.getElementById('income').appendChild(car);                    
+                    document.getElementById('income').appendChild(car);
+                    chanceCard2.used = true;                    
                 }
                 if (cardRandom == 2) {
                     document.getElementById('chancecards').appendChild(chance3);
@@ -1253,10 +1255,12 @@
                         car.style.WebkitTransform = "translate(0px, -62px)";
                         document.getElementById('jailed').appendChild(car);                        
                     }
+                    chanceCard3.used = true;
                 }
                 if (cardRandom == 3) {
                     document.getElementById('chancecards').appendChild(chance4);
                     jailFreeChance = true;
+                    chanceCard4.used = true;
                 }
                 if (cardRandom == 4) {
                     document.getElementById('chancecards').appendChild(chance5);
@@ -1264,7 +1268,8 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Boardwalk            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
-                    document.getElementById('boardwalk').appendChild(car);                     
+                    document.getElementById('boardwalk').appendChild(car);
+                    chanceCard5.used = true;                     
                 }
                 if (cardRandom == 5) {
                     document.getElementById('chancecards').appendChild(chance6);
@@ -1272,7 +1277,8 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Illinois Avenue            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
-                    document.getElementById('illinois').appendChild(car);                     
+                    document.getElementById('illinois').appendChild(car);  
+                    chanceCard6.used = true;                   
                 }
                 if (cardNumber == 6) {
                     document.getElementById('chancecards').appendChild(chance7);
@@ -1294,6 +1300,7 @@
                         car.style.WebkitTransform = "translate(0px, -19px)";
                         document.getElementById('electric').appendChild(car);
                     }
+                    chanceCard7.used = true;
                 }
                 if (cardNumber == 7) {
                     document.getElementById('chancecards').appendChild(chance8);
@@ -1303,7 +1310,8 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. Charles Avenue            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
-                    document.getElementById('stcharles').appendChild(car);                    
+                    document.getElementById('stcharles').appendChild(car);
+                    chanceCard8.used = true;                    
                 }
                 if (cardNumber == 8) {
                     document.getElementById('chancecards').appendChild(chance9);
@@ -1311,7 +1319,8 @@
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -19px)";
-                    document.getElementById('go').appendChild(car);                    
+                    document.getElementById('go').appendChild(car);
+                    chanceCard9.used = true;                    
                 }
                 if (cardNumber == 9) {
                     document.getElementById('chancecards').appendChild(chance10);
@@ -1333,11 +1342,13 @@
                         car.style.WebkitTransform = "translate(0px, -15px)";
                         document.getElementById('short').appendChild(car);
                     }
+                    chanceCard10.used = true;
                 }
                 if (cardNumber == 10) {
                     document.getElementById('chancecards').appendChild(chance11);
                     score += 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                    chanceCard11.used = true;
                 }
                 if (cardNumber == 11) {
                     document.getElementById('chancecards').appendChild(chance12);
@@ -1346,16 +1357,19 @@
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -19px)";
                     document.getElementById('reading').appendChild(car);
+                    chanceCard12.used = true;
                 } 
                 if (cardNumber == 12) {
                     document.getElementById('chancecards').appendChild(chance13);
                     score += 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                    chanceCard13.used = true;
                 }
                 if (cardNumber == 13) {
                     document.getElementById('chancecards').appendChild(chance14);
                     score += 1500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
+                    chanceCard14.used = true;
                 }                                                                                                           
             }            
         }
