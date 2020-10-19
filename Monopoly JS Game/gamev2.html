@@ -356,6 +356,7 @@
         document.getElementById('chancecards').appendChild(chanceCard);        
 
         var cardRandom = 0;
+        var alwaysJailFree = true;
 
         var communityCard1 = {used: false};
         var communityCard2 = {used: false};
@@ -882,6 +883,7 @@
                 document.getElementById('marvin').appendChild(car);
             }
             if (space == 30) {
+                if (alwaysJailFree == false) {
                 space = 10
                 if (jailFreeChance == false && jailFreeCom == false) {
                     score -= 500;
@@ -908,6 +910,7 @@
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -62px)";
                     document.getElementById('jailed').appendChild(car);                        
+                }
                 }
             }            
             if (space == 31) {
@@ -1056,7 +1059,7 @@
                     i++;
                 }
                 while(communityCards[i].used == true && i < communityCards.length - 1);
-                if (communityCards[communityCards.length - 1].used == true) {
+                if (i == communityCards.length - 1 && communityCards[communityCards.length - 1].used == true) {
                     do {
                         communityCards[j].used = false;
                         j++;
@@ -1067,6 +1070,8 @@
                     cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
                 }
                 while(communityCards[cardRandom].used == true);
+                cardRandom = 0;
+
                 if (cardRandom == 0) {
                     document.getElementById('communitycards').appendChild(community1);
                     score += 450;
@@ -1198,7 +1203,8 @@
                     x++;
                 }
                 while(chanceCards[x].used == true && x < chanceCards.length - 1);
-                if (chanceCards[chanceCards.length - 1].used == true) {
+                // if the last card is reached AND it's used
+                if (x == chanceCards.length - 1 && chanceCards[chanceCards.length - 1].used == true) {
                     do {
                         chanceCards[y].used = false;
                         y++;
@@ -1218,12 +1224,30 @@
                 if (cardRandom == 1) {
                     document.getElementById('chancecards').appendChild(chance2);
                     //may need to make if cases if the players land in a tax spot
-                    space = 4;
-                    score -= 2000;
-                    document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Income Tax            ";
-                    car.setAttribute("transform", "translate(0px, -41px)");
-                    car.setAttribute("position", "absolute");
-                    document.getElementById('income').appendChild(car);
+                    if (space == 7) {
+                        space = 4;
+                        score -= 2000;
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:             Income Tax            ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(-16px, 27px)";
+                        document.getElementById('income').appendChild(car);
+                    }
+                    if (space == 22) {
+                        space = 19;
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          New York Avenue            ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -51px)";
+                        document.getElementById('newyork').appendChild(car);
+                    }
+                    if (space == 36) {
+                        space == 33;
+                        community = true;
+                        nowCommunity = true;
+                        document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Community Chest           ";
+                        car.setAttribute("position", "absolute");
+                        car.style.WebkitTransform = "translate(0px, -19px)";
+                        document.getElementById('communitytop').appendChild(car);
+                    }
                     chanceCard2.used = true;                    
                 }
                 if (cardRandom == 2) {
