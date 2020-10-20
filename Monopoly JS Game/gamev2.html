@@ -286,6 +286,7 @@
         var roll1 = 1;
         var roll2 = 1;
         var space = 0;
+        var spaceBefore = 0;
         var firstRoll = true;
         var jailFreeChance = false;
         var jailFreeCom = false;
@@ -620,6 +621,8 @@
                 }                                                                                                                                                               
             }
 
+            spaceBefore = space;
+
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             //space += roll1 + roll2;
@@ -629,7 +632,11 @@
             else if (space >= 39) {
                 space -= 39;
             }
-            score -= score * 0.1;
+            //score -= score * 0.1;
+
+            if (spaceBefore >= 29 && space < 11) {
+                score += 12000;
+            }
 
             //random in JavaScript
 
@@ -1070,7 +1077,6 @@
                     cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
                 }
                 while(communityCards[cardRandom].used == true);
-                cardRandom = 0;
 
                 if (cardRandom == 0) {
                     document.getElementById('communitycards').appendChild(community1);
@@ -1252,7 +1258,7 @@
                 }
                 if (cardRandom == 2) {
                     document.getElementById('chancecards').appendChild(chance3);
-                    space = 10
+                    space = 10;
                     if (jailFreeChance == false && jailFreeCom == false) {
                         score -= 500;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            In Jail            ";
@@ -1288,7 +1294,7 @@
                 }
                 if (cardRandom == 4) {
                     document.getElementById('chancecards').appendChild(chance5);
-                    space = 39
+                    space = 39;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Boardwalk            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
@@ -1297,7 +1303,7 @@
                 }
                 if (cardRandom == 5) {
                     document.getElementById('chancecards').appendChild(chance6);
-                    space = 39
+                    space = 24;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          Illinois Avenue            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
