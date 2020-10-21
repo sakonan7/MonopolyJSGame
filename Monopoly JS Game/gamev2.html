@@ -283,6 +283,7 @@
         var chance = false;
         var nowCommunity = false;
         var nowChance = false;
+        var backSpace = false;
         var roll1 = 1;
         var roll2 = 1;
         var space = 0;
@@ -290,8 +291,6 @@
         var firstRoll = true;
         var jailFreeChance = false;
         var jailFreeCom = false;
-        var chanceAllUsed = false;
-        var comAllUsed = false;
 
         var score = 12000;
         document.getElementById('playerboard').style.fontWeight = 'bold';
@@ -529,51 +528,102 @@
             if (nowCommunity == true) {
                 nowCommunity = false;
                 community = false;
-                if (cardRandom == 0 || cardRandom2 == 0) {
-                    community1.parentNode.removeChild(community1);
+                //try separating cardRandom and cardRandom 2
+                if (backSpace == false) {
+                    if (cardRandom == 0) {
+                        community1.parentNode.removeChild(community1);
+                    }                
+                    if (cardRandom == 1) {
+                        community2.parentNode.removeChild(community2);
+                    }                
+                    if (cardRandom == 2) {
+                        community3.parentNode.removeChild(community3);
+                    }                
+                    if (cardRandom == 3) {
+                        community4.parentNode.removeChild(community4);
+                    }                
+                    if (cardRandom == 4) {
+                        community5.parentNode.removeChild(community5);
+                    }                
+                    if (cardRandom == 5) {
+                        community6.parentNode.removeChild(community6);
+                    }                
+                    if (cardRandom == 6) {
+                        community7.parentNode.removeChild(community7);
+                    }                
+                    if (cardRandom == 7) {
+                        community8.parentNode.removeChild(community8);
+                    }                 
+                    if (cardRandom == 8) {
+                        document.getElementById('jailFreeCom').appendChild(community9);
+                    }                
+                    if (cardRandom == 9) {
+                        community10.parentNode.removeChild(community10);
+                    }                
+                    if (cardRandom == 10) {
+                        community11.parentNode.removeChild(community11);
+                    }                
+                    if (cardRandom == 11) {
+                        community12.parentNode.removeChild(community12);
+                    }                
+                    if (cardRandom == 12) {
+                        community13.parentNode.removeChild(community13);
+                    }                
+                    if (cardRandom == 13) {
+                        community14.parentNode.removeChild(community14);
+                    }                
+                    if (cardRandom == 14) {
+                        community15.parentNode.removeChild(community15);
+                    }
                 }
-                if (cardRandom == 1 || cardRandom2 == 1) {
-                    community2.parentNode.removeChild(community2);
-                }
-                if (cardRandom == 2 || cardRandom2 == 2) {
-                    community3.parentNode.removeChild(community3);
-                }
-                if (cardRandom == 3 || cardRandom2 == 3) {
-                    community4.parentNode.removeChild(community4);
-                }
-                if (cardRandom == 4  || cardRandom2 == 4) {
-                    community5.parentNode.removeChild(community5);
-                }
-                if (cardRandom == 5  || cardRandom2 == 5) {
-                    community6.parentNode.removeChild(community6);
-                }
-                if (cardRandom == 6  || cardRandom2 == 6) {
-                    community7.parentNode.removeChild(community7);
-                }
-                if (cardRandom == 7  || cardRandom2 == 7) {
-                    community8.parentNode.removeChild(community8);
-                } 
-                if (cardRandom == 8  || cardRandom2 == 8) {
-                    document.getElementById('jailFreeCom').appendChild(community9);
-                }
-                if (cardRandom == 9  || cardRandom2 == 9) {
-                    community10.parentNode.removeChild(community10);
-                }
-                if (cardRandom == 10  || cardRandom2 == 10) {
-                    community11.parentNode.removeChild(community11);
-                }
-                if (cardRandom == 11  || cardRandom2 == 11) {
-                    community12.parentNode.removeChild(community12);
-                }
-                if (cardRandom == 12  || cardRandom2 == 12) {
-                    community13.parentNode.removeChild(community13);
-                }
-                if (cardRandom == 13  || cardRandom2 == 13) {
-                    community14.parentNode.removeChild(community14);
-                }
-                if (cardRandom == 14 || cardRandom2 == 14) {
-                    community15.parentNode.removeChild(community15);
-                }                               
+                if (backSpace == true) {
+                    if (cardRandom2 == 0) {
+                        community1.parentNode.removeChild(community1);
+                    }
+                    if (cardRandom2 == 1) {
+                        community2.parentNode.removeChild(community2);
+                    }
+                    if (cardRandom2 == 2) {
+                        community3.parentNode.removeChild(community3);
+                    }
+                    if (cardRandom2 == 3) {
+                        community4.parentNode.removeChild(community4);
+                    }
+                    if (cardRandom2 == 4) {
+                        community5.parentNode.removeChild(community5);
+                    }
+                    if (cardRandom2 == 5) {
+                        community6.parentNode.removeChild(community6);
+                    }
+                    if (cardRandom2 == 6) {
+                        community7.parentNode.removeChild(community7);
+                    }
+                    if (cardRandom2 == 7) {
+                        community8.parentNode.removeChild(community8);
+                    }
+                    if (cardRandom2 == 8) {
+                        document.getElementById('jailFreeCom').appendChild(community9);
+                    }
+                    if (cardRandom2 == 9) {
+                        community10.parentNode.removeChild(community10);
+                    }
+                    if (cardRandom2 == 10) {
+                        community11.parentNode.removeChild(community11);
+                    }
+                    if (cardRandom2 == 11) {
+                        community12.parentNode.removeChild(community12);
+                    }                    
+                    if (cardRandom2 == 12) {
+                        community13.parentNode.removeChild(community13);
+                    }
+                    if (cardRandom2 == 13) {
+                        community14.parentNode.removeChild(community14);
+                    }
+                    if (cardRandom2 == 14) {
+                        community15.parentNode.removeChild(community15);
+                    }
+                    backSpace = false;                                                                                                                                                                                                                                                                    
+                }                                               
             }
             if (nowChance == true) {
                 nowChance = false;
@@ -635,7 +685,7 @@
             }
             //score -= score * 0.1;
 
-            if (spaceBefore >= 29 && space < 11) {
+            if (spaceBefore >= 29 && space < 11 && space != 0) {
                 score += 12000;
             }
 
@@ -1221,9 +1271,11 @@
                     cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
                 }
                 while(chanceCards[cardRandom].used == true);
-                cardRandom = 0;
+                if (space == 7) {
+                    cardRandom = 5;
+                }
                 if (space == 36) {
-                    cardRandom = 1;                    
+                    cardRandom = 7;
                 }
                 if (cardRandom == 0) {
                     document.getElementById('chancecards').appendChild(chance1);
@@ -1393,8 +1445,9 @@
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -19px)";
                         document.getElementById('communitytop').appendChild(car);
-                        //community = true;
-                        nowCommunity = true; 
+                        community = true;
+                        nowCommunity = true;
+                        backSpace = true; 
                     }
                     chanceCard2.used = true;                   
                 }
@@ -1452,21 +1505,24 @@
                     document.getElementById('illinois').appendChild(car);  
                     chanceCard6.used = true;                   
                 }
-                if (cardNumber == 6) {
+                if (cardRandom == 6) {
                     document.getElementById('chancecards').appendChild(chance7);
                     if (space == 36) {
+                        space = 28;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Water Works                ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -15px)";
                         document.getElementById('water').appendChild(car);
                     }
                     if (space == 22) {
+                        space = 28;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Water Works                ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -15px)";
                         document.getElementById('water').appendChild(car);
                     }
                     if (space == 7) {
+                        space = 12;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Electric Company            ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -19px)";
@@ -1474,7 +1530,7 @@
                     }
                     chanceCard7.used = true;
                 }
-                if (cardNumber == 7) {
+                if (cardRandom == 7) {
                     document.getElementById('chancecards').appendChild(chance8);
                     if (space == 36 || space == 22) {
                         score += 12000;
@@ -1485,7 +1541,7 @@
                     document.getElementById('stcharles').appendChild(car);
                     chanceCard8.used = true;                    
                 }
-                if (cardNumber == 8) {
+                if (cardRandom == 8) {
                     document.getElementById('chancecards').appendChild(chance9);
                     score += 12000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
@@ -1494,7 +1550,7 @@
                     document.getElementById('go').appendChild(car);
                     chanceCard9.used = true;                    
                 }
-                if (cardNumber == 9) {
+                if (cardRandom == 9) {
                     document.getElementById('chancecards').appendChild(chance10);
                     if (space == 7) {
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
@@ -1516,13 +1572,13 @@
                     }
                     chanceCard10.used = true;
                 }
-                if (cardNumber == 10) {
+                if (cardRandom == 10) {
                     document.getElementById('chancecards').appendChild(chance11);
                     score += 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
                     chanceCard11.used = true;
                 }
-                if (cardNumber == 11) {
+                if (cardRandom == 11) {
                     document.getElementById('chancecards').appendChild(chance12);
                     score += 12000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
@@ -1531,13 +1587,13 @@
                     document.getElementById('reading').appendChild(car);
                     chanceCard12.used = true;
                 } 
-                if (cardNumber == 12) {
+                if (cardRandom == 12) {
                     document.getElementById('chancecards').appendChild(chance13);
                     score += 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
                     chanceCard13.used = true;
                 }
-                if (cardNumber == 13) {
+                if (cardRandom == 13) {
                     document.getElementById('chancecards').appendChild(chance14);
                     score += 1500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
