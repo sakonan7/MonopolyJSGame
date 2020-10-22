@@ -16,21 +16,18 @@
             <div id="rectangle"></div>
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 3px; font-size: 8.5px; width: 82.5px; text-align: center"><b>KENTUCKY AVENUE</b></p>
             <div id="kentucky">
-                <!--<img src="car.png" style="height: 17px; transform: translate(0px, 12px); position: absolute">-->
             </div>
         </div>   
         <div id="space" style="float: left; border-left-width: 0px;">
             <p style="margin-top: 6px; margin-bottom: 8px; margin-left: 2px; font-size: 8.5px; width: 82.5px; text-align: center"><b>CHANCE</b></p>
             <div id="bluechance">
                 <img src="bluechance.png" style="height: 52px; transform: translate(23.5px); position: relative;">
-                <!--<img src="car.png" style="height: 17px; transform: translate(-24px, 40px); position: absolute">-->
             </div>
         </div>  
         <div id="space" style="float: left; border-left-width: 0px;">
             <div id="rectangle"></div>
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 3px; font-size: 8.5px; width: 82.5px; text-align: center"><b>INDIANA AVENUE</b></p>
             <div id="indiana">
-                <!--<img src="car.png" style="height: 17px; transform: translate(0px, 12px); position: absolute">-->
             </div>            
         </div>
         <div id="space" style="float: left; border-left-width: 0px;">
@@ -94,7 +91,6 @@
             </div>
         </div>                                                                        
         <!--Spaces going down will not have a top border-->
-        <!--Lower everything by 4px-->
         <div id="space" style="float: bottom; border-top-width: 0px; transform: translate(0, 95px)">
             <div id="rectangle" style="background-color: orange; transform: translate(0, 0px)"></div>
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 3px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0, -63px)"><b>NEW YORK AVENUE</b></p>
@@ -253,8 +249,7 @@
         <div id="space" style="float: bottom; border-top-width: 0px; border-left-width: 0px; transform: translate(1193.5px, -582.5px); height: 89.5px">
             <p style="margin-top: 6px; margin-left: 2.5px; margin-bottom: 8.5px; font-size: 8.5px; width: 82.5px; text-align: center; transform: translate(0px, 5.5px)"><b>COLLECT $12,000 SALARY AS YOU PASS</b></p>
             <div id="go">
-                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative;"> <!--absolute; z-index: 1-->
-                <!--<img src="car.png" style="height: 17px; transform: translate(0px, -21px); position: absolute">-->
+                <img src="go.png" style="height: 48px; transform: translate(-4px, 2px); position: relative;">
             </div>
         </div>
         <div id="gameUI" style="transform: translate(95px, -1224px);">
@@ -265,16 +260,11 @@
             <div id="chancecards" style="transform: translate(304px, -164px);"></div>
             <div id="communitycards" style="transform: translate(564px, -312px);"></div>
             <div id="jailFreeCom" style="transform: translate(809px, -454px);"></div>
-            <!--Javascript will provide text-->
-            <!--Roll button will be on a separate line with a transform translate-->
-            <!--playerboard will have a consistent width, use the longest space name and border to judge width-->
             <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -453px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
             </pre>
             <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -497px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
             <div id ="message" style="font-size: 16px; transform: translate(354px, -491px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b></b>
             </div>
-            <!--Dice only appear when you roll-->
-            <!--try using margin to separate dice-->
             <div id="dice" style="transform: translate(477px, -481px)"></div>
         </div>                                            
     </div>
@@ -295,19 +285,16 @@
         var score = 12000;
         document.getElementById('playerboard').style.fontWeight = 'bold';
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
-        //if and else statements to determine where the piece is placed and what is written in playerboard
-        //separate set of if and else statements for community and chance cards
+
         document.getElementById('message').style.fontWeight = 'bold';
         var usualMessage = "Pay 10% of your earnings to roll. Earn $100,000 to win.";
         var win = "You win! You've earned $100,000! Now keep earning more!";
         document.getElementById('message').innerHTML = usualMessage;
 
-        //Managed to move car by modifying go.png, but, car is behind
         var car = document.createElement("IMG");
         car.setAttribute("src", "car.png");
         car.setAttribute("height", "17px");
         car.setAttribute("position", "absolute");
-        //car.setAttribute("z-index", "2");
         car.style.WebkitTransform = "translate(0px, -19px)";
         document.getElementById('go').appendChild(car);   
 
@@ -489,7 +476,6 @@
         function myFunction() {
             var btn = document.createElement("BUTTON");          
 
-            //remove dice
             if (firstRoll == false) {
                 if (roll1 == 1) {
                     dice1.parentNode.removeChild(dice1);
@@ -531,7 +517,6 @@
             if (nowCommunity == true) {
                 nowCommunity = false;
                 community = false;
-                //try separating cardRandom and cardRandom 2
                 if (backSpace == false) {
                     if (cardRandom == 0) {
                         community1.parentNode.removeChild(community1);
@@ -680,7 +665,6 @@
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
             space += roll1 + roll2;
-            //space += 1;
             if (space > 39) {
                 space -= 40;
             }
@@ -694,9 +678,6 @@
                 document.getElementById('message').style.color = 'gold';
                 document.getElementById('message').innerHTML = win;
             }
-
-            //random in JavaScript
-
             //every space that is not a community or chance space makes community and chance false
             if (space == 0) {
                 community = false;
@@ -785,11 +766,9 @@
             if (space == 10) {
                 community = false;
                 chance = false;
-                //message changes depending on how you got to jail
-                //placement of car changes
                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                 car.setAttribute("position", "absolute");
-                car.style.WebkitTransform = "translate(0px, -62px)"; //-22
+                car.style.WebkitTransform = "translate(0px, -62px)";
                 document.getElementById('jailed').appendChild(car);
             }    
             if (space == 11) {
@@ -968,7 +947,6 @@
                         jailFreeCom = false;
                         community9.parentNode.removeChild(community9);
                     }
-                    //To indicate that you are not jailed
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -62px)";
@@ -1051,7 +1029,6 @@
                 document.getElementById('boardwalk').appendChild(car);
             }                                                                      
 
-            //dice   
             firstRoll = false;                                                                                                                                                                                                                              
             if (roll1 == 1){
                 document.getElementById('dice').appendChild(dice1);
@@ -1096,25 +1073,12 @@
                 document.getElementById('dice').appendChild(bdice6);
             }                                                                   
 
-            //community and chance cards
-                //do loop for as long as the randomizer keeps getting a used card
-                    //when that happens, use notUsed boolean to select and use the card
-                    //reset notUsed
-                //do loop for if all the cards are used
-                //how to change used boolean
-                //do loop for searching whole array, as long as array[i].used == true && i < array.length
-                    //as long as one card is not used, the loop will end, and the whole deck doesn't have to be searched
-                    //if whole array is used, allused == true and all cards are reset, if i == array.length - 1 because deck is being searched from first to last in order
-                //then a do loop to keep searching for a random as long as array[random] == true
-
             //remove card in communitycards/chancecards
             if (community == false) {                                                                               
                 document.getElementById('communitycards').appendChild(communityCard);
             }
             if (community == true) {
                 communityCard.parentNode.removeChild(communityCard);
-                //randomizer
-                //cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
                 var i = -1;
                 var j = 0;
                 //do executes the inside block before checking
@@ -1175,8 +1139,6 @@
                             jailFreeCom = false;
                             community9.parentNode.removeChild(community9);
                         }
-                        
-                        //To indicate that you are not jailed
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -62px)";
@@ -1255,16 +1217,12 @@
             }
             if (chance == true) {
                 chanceCard.parentNode.removeChild(chanceCard);
-                //randomizer
-                //reshuffler, don't reshuffle (used = false) jail free is jail free = true
-                //cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
                 var x = -1;
                 var y = 0;
                 do {
                     x++;
                 }
                 while(chanceCards[x].used == true && x < chanceCards.length - 1);
-                // if the last card is reached AND it's used
                 if (x == chanceCards.length - 1 && chanceCards[chanceCards.length - 1].used == true) {
                     do {
                         chanceCards[y].used = false;
@@ -1284,7 +1242,6 @@
                 }
                 if (cardRandom == 1) {
                     document.getElementById('chancecards').appendChild(chance2);
-                    //may need to make if cases if the players land in a tax spot
                     if (space == 7) {
                         space = 4;
                         score -= 2000;
@@ -1303,9 +1260,6 @@
                     if (space == 36) {
                         space = 33;
                         communityCard.parentNode.removeChild(communityCard);
-                        //use another variable instead of cardRandom
-                        //cardRandom2
-                        //m, n
                         var m = 0;
                         var n = 0;
                         cardRandom2 = 0;
@@ -1367,7 +1321,6 @@
                                     community9.parentNode.removeChild(community9);
                                 }
                         
-                                //To indicate that you are not jailed
                                 document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                                 car.setAttribute("position", "absolute");
                                 car.style.WebkitTransform = "translate(0px, -62px)";
@@ -1473,7 +1426,6 @@
                             jailFreeCom = false;
                             community9.parentNode.removeChild(community9);
                         }
-                        //To indicate that you are not jailed
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Just Visiting            ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -62px)";
