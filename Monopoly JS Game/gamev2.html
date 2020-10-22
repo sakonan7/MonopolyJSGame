@@ -690,6 +690,11 @@
                 score += 12000;
             }
 
+            if (score >= 100000) {
+                document.getElementById('message').style.color = 'gold';
+                document.getElementById('message').innerHTML = win;
+            }
+
             //random in JavaScript
 
             //every space that is not a community or chance space makes community and chance false
