@@ -271,7 +271,7 @@
             <pre id="playerboard" style="font-size: 16px; transform: translate(313px, -453px); height: 25px; width: 300px; font-family: 'Times New Roman', Times, serif;"><b><!--Player     Score:     $12000     Space:                    GO                --></b>
             </pre>
             <button onclick="myFunction()" style="font-size: 16px; transform: translate(736px, -497px); height: 25px; font-family: 'Times New Roman', Times, serif">Roll</button>
-            <div style="font-size: 16px; transform: translate(354px, -491px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b>Pay 10% of your earnings to roll. Earn $100,000 to win.</b>
+            <div id ="message" style="font-size: 16px; transform: translate(354px, -491px); height: 25px; width: 500px; font-family: 'Times New Roman', Times, serif;"><b></b>
             </div>
             <!--Dice only appear when you roll-->
             <!--try using margin to separate dice-->
@@ -297,6 +297,10 @@
         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
         //if and else statements to determine where the piece is placed and what is written in playerboard
         //separate set of if and else statements for community and chance cards
+        document.getElementById('message').style.fontWeight = 'bold';
+        var usualMessage = "Pay 10% of your earnings to roll. Earn $100,000 to win.";
+        var win = "You win! You've earned $100,000! Now keep earning more!";
+        document.getElementById('message').innerHTML = usualMessage;
 
         //Managed to move car by modifying go.png, but, car is behind
         var car = document.createElement("IMG");
@@ -357,7 +361,6 @@
 
         var cardRandom = 0;
         var cardRandom2 = 0;
-        var alwaysJailFree = true;
 
         var communityCard1 = {used: false};
         var communityCard2 = {used: false};
@@ -676,14 +679,12 @@
 
             roll1 = Math.floor(Math.random() * 6) + 1;
             roll2 = Math.floor(Math.random() * 6) + 1;
-            //space += roll1 + roll2;
-            if (space < 39) {
-                space += 1;
+            space += roll1 + roll2;
+            //space += 1;
+            if (space > 39) {
+                space -= 40;
             }
-            else if (space >= 39) {
-                space -= 39;
-            }
-            //score -= score * 0.1;
+            score -= score * 0.1;
 
             if (spaceBefore >= 29 && space < 11 && space != 0) {
                 score += 12000;
@@ -941,7 +942,6 @@
                 document.getElementById('marvin').appendChild(car);
             }
             if (space == 30) {
-                if (alwaysJailFree == false) {
                 space = 10
                 if (jailFreeChance == false && jailFreeCom == false) {
                     score -= 500;
@@ -968,7 +968,6 @@
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, -62px)";
                     document.getElementById('jailed').appendChild(car);                        
-                }
                 }
             }            
             if (space == 31) {
@@ -1111,8 +1110,9 @@
                 communityCard.parentNode.removeChild(communityCard);
                 //randomizer
                 //cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
-                var i = 0;
+                var i = -1;
                 var j = 0;
+                //do executes the inside block before checking
                 do {
                     i++;
                 }
@@ -1122,7 +1122,7 @@
                         communityCards[j].used = false;
                         j++;
                     }
-                    while(j < communityCards.length - 1);
+                    while(j <= communityCards.length - 1);
                 }
                 do {
                     cardRandom = Math.floor(Math.random() * (communityCards.length - 1));
@@ -1253,7 +1253,7 @@
                 //randomizer
                 //reshuffler, don't reshuffle (used = false) jail free is jail free = true
                 //cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
-                var x = 0;
+                var x = -1;
                 var y = 0;
                 do {
                     x++;
@@ -1265,18 +1265,12 @@
                         chanceCards[y].used = false;
                         y++;
                     }
-                    while(y < chanceCards.length - 1);
+                    while(y <= chanceCards.length - 1);
                 }
                 do {
                     cardRandom = Math.floor(Math.random() * (chanceCards.length - 1));
                 }
-                while(chanceCards[cardRandom].used == true);
-                if (space == 7) {
-                    cardRandom = 5;
-                }
-                if (space == 36) {
-                    cardRandom = 7;
-                }
+                while(chanceCards[cardRandom].used == true);           
                 if (cardRandom == 0) {
                     document.getElementById('chancecards').appendChild(chance1);
                     score -= 150;
@@ -1535,6 +1529,7 @@
                     if (space == 36 || space == 22) {
                         score += 12000;
                     }
+                    space = 11
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         St. Charles Avenue            ";
                     car.setAttribute("position", "absolute");
                     car.style.WebkitTransform = "translate(0px, 15px)";
@@ -1543,6 +1538,7 @@
                 }
                 if (cardRandom == 8) {
                     document.getElementById('chancecards').appendChild(chance9);
+                    space = 0;
                     score += 12000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                    GO                ";
                     car.setAttribute("position", "absolute");
@@ -1553,18 +1549,21 @@
                 if (cardRandom == 9) {
                     document.getElementById('chancecards').appendChild(chance10);
                     if (space == 7) {
+                        space = 5;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -19px)";
                         document.getElementById('reading').appendChild(car);
                     }
                     if (space == 22) {
+                        space = 25;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:          B. & O. Railroad                ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -15px)";
                         document.getElementById('borailroad').appendChild(car);
                     }
                     if (space == 36) {
+                        space = 35;
                         document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:            Short Line                ";
                         car.setAttribute("position", "absolute");
                         car.style.WebkitTransform = "translate(0px, -15px)";
@@ -1580,6 +1579,7 @@
                 }
                 if (cardRandom == 11) {
                     document.getElementById('chancecards').appendChild(chance12);
+                    space = 5;
                     score += 12000;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:         Reading Railroad            ";
                     car.setAttribute("position", "absolute");
@@ -1589,7 +1589,7 @@
                 } 
                 if (cardRandom == 12) {
                     document.getElementById('chancecards').appendChild(chance13);
-                    score += 500;
+                    score -= 500;
                     document.getElementById('playerboard').innerHTML = "Player     Score:     " + Math.round(score * 100) / 100 + "     Space:                Chance            ";
                     chanceCard13.used = true;
                 }
